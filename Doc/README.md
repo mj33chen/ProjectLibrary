@@ -1,1 +1,1 @@
-In this directory you can the common documents to the cluster.
+In this directory you can find the common documents to the cluster.
