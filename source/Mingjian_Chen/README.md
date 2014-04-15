@@ -1,0 +1,3 @@
+- Clasificación 
+- Posición
+- Biblioteca 
