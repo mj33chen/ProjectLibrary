@@ -22,18 +22,20 @@ public class Tema {
     //-------------------------------------
     
     public Tema() {
+        this.libros = new ArrayList<Libro>();
     }
     
     public Tema(String nombre, String color) {
         this.color = color;
         this.nombre = nombre;
+        this.libros = new ArrayList<Libro>();
     }
     
     //No decidido
     public Tema(String nombre, String color, ArrayList<Libro> libros) {
         this.color = color;
         this.nombre = nombre;
-        this.libros = new ArrayList<>(libros);
+        this.libros = new ArrayList<Libro>(libros);
     }
     
     public String getNombre() {
