@@ -10,8 +10,9 @@ import javax.swing.tree;
 
 public class Biblioteca extends FacilitySet
 {
-	private ArrayList<Clasificacion> clasifi;
-	private ArrayList<Libro> libros;
+	
+    private ArrayList<Clasificacion> clasifi;
+    private ArrayList<Libro> libros;
 
 
 	/**
