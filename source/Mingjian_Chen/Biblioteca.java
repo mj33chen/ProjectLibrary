@@ -55,12 +55,13 @@ public class Biblioteca extends FacilitySet
     */
     public eliminarClasifi(TreeNode tree)
     {
-   		Iterator it = clasifi.iterator();
-   		while (it.hasNext()) {
-            Clasificacion clasi = new Clasificacion();
-            clasi = (Clasificacion) it.next();
-            if (clasi.getnombreClasifi() == tree.getnombreClasifi()) it.remove(clasi);
-        }
+   	    Iterator it = clasifi.iterator();
+   	    while (it.hasNext()) 
+   	    {
+	    	Clasificacion clasi = new Clasificacion();
+	        clasi = (Clasificacion) it.next();
+	        if (clasi.getnombreClasifi() == tree.getnombreClasifi()) it.remove(clasi);
+            }
     }
 
     /**
@@ -71,7 +72,8 @@ public class Biblioteca extends FacilitySet
     public Clasificacion getClasificacion(TreeNode tree)
     {
     	Iterator it = clasifi.iterator();
-        while (it.hasNext()) {
+        while (it.hasNext()) 
+        {
             Clasificacion clasi = new Clasificacion();
             clasi = (Clasificacion) it.next();
             if (clasi.getnombreClasifi() == tree.getnombreClasifi()) return clasi;
