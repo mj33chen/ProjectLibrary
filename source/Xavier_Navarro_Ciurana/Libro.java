@@ -43,6 +43,10 @@ public class Libro {
         return id;
     }
     
+    public ArrayList<Tema> getVector() {
+        return temas;
+    }
+    
     /**
      * SETTERS
      * =======
@@ -58,6 +62,10 @@ public class Libro {
     
     public void setId(int id) {
         this.id = id;
+    }
+    
+    public void setVector(ArrayList<Tema> temas) {
+        this.temas = temas;
     }
     
     
