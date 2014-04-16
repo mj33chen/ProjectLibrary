@@ -15,7 +15,7 @@ public class Biblioteca extends FacilitySet
     private ArrayList<Libro> libros;
 
 
-	/**
+    /**
     * Crear una nueva biblioteca
     * @param nombre El nombre de la biblioteca creada
     * @return la clase Biblioteca 
@@ -43,18 +43,18 @@ public class Biblioteca extends FacilitySet
     *
     *
     */
-    public anadirClasifi(TreeNode tree)
+    public void anadirClasifi(TreeNode tree)
     {
     	Clasificacion c = new Clasificacion(tree);
     	clasifi.add(c);
     }
 
-	/**
+    /**
     *
     *
     *
     */
-    public eliminarClasifi(TreeNode tree)
+    public void eliminarClasifi(TreeNode tree)
     {
    	    Iterator it = clasifi.iterator();
    	    while (it.hasNext()) 
