@@ -11,6 +11,7 @@ import java.io.IOException;
 
 public class Biblioteca extends FacilitySet
 {
+    private Clasificacion clasi_actual;
 	private ArrayList<Clasificacion> clasifi;
 	private ArrayList<Libro> libros;
 
@@ -20,13 +21,13 @@ public class Biblioteca extends FacilitySet
     * @param nombre El nombre de la biblioteca creada
     * @return la clase Biblioteca 
     */
-    public Biblioteca(String n)
+    public Biblioteca(String n, ClasificacionPre c)
     {
-    	super(n);
+    	this.name = n;
     	libros = new ArrayList<Libro>();
     	clasifi = new ArrayList<Clasificacion>();
+        clasi_actual = c;
     }
-
 
     /**
     *
@@ -35,7 +36,7 @@ public class Biblioteca extends FacilitySet
     */
     public int getNumClasifi()
     {
-    	clasifi.size();
+    	return (1 + clasifi.size());
     }
 
 
@@ -48,9 +49,20 @@ public class Biblioteca extends FacilitySet
     {
         if (Clasificacion c : clasifi)
         {
-            if(c.getNombre() == nombre) return true;
+            if(c.getnombreClasifi().equal(nombre)) return true;
         }
         return false;
+    }
+
+    /**
+     *
+     *
+     *
+     *
+     */
+    public void assignarClasifi(Clasificacion c)
+    {
+        clasi_actual = c;
     }
 
     /**
@@ -60,13 +72,13 @@ public class Biblioteca extends FacilitySet
     * @throws IOException Si la clasificación existe en la biblioteca
     *           con el dicho nombre  
     */
-    public void anadirClasifi(String nombre, TreeNode tree) throws IOException
+    public void anadirClasifi(Clasificacion c) throws IOException
     {
 
-        if(not this.existeClasifi(nombre))
+        String n = c.getnombreClasifi();
+        if(not this.existeClasifi(n))
         {
-            Clasificacion clasi = new Clasificacion(nombre, tree);
-            clasi.add(c);
+            clasifi.add(c);
         } 
         else 
         {
@@ -86,7 +98,7 @@ public class Biblioteca extends FacilitySet
         {
             Clasificacion clasi = new Clasificacion();
             clasi = (Clasificacion) it.next();
-            if (clasi.getnombreClasifi() == tree.getnombreClasifi()) 
+            if (clasi.getnombreClasifi().equal(it.getnombreClasifi())) 
                 it.remove(clasi); 
         }  
     }
@@ -102,7 +114,7 @@ public class Biblioteca extends FacilitySet
         while (it.hasNext()) {
             Clasificacion clasi = new Clasificacion();
             clasi = (Clasificacion) it.next();
-            if (clasi.getnombreClasifi() == tree.getnombreClasifi()) return clasi;
+            if (clasi.getnombreClasifi().equal(tree.getnombreClasifi())) return clasi;
         }
         return null;
     }
