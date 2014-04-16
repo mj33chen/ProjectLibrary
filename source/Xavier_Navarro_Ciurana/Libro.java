@@ -1,15 +1,64 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-package Xavier_Navarro_Ciurana;
+import biblioteca_1.Tema;
+import java.util.ArrayList;
 
 /**
- *
- * @author xwade
+ * La clase Libro gestiona toda la información relacionada con un libro, permite
+ * crear y  modificar un libro y sus temas asociados.
+ * 
+ * @author Xavier Navarro Ciurana
  */
+
 public class Libro {
+    
+    private String titulo;
+    private String autor;
+    private int id;
+    private ArrayList<Tema> temas;
+    
+    
+    /* Creadoras */
+    public Libro() {}
+    
+    public Libro(String titulo, String autor, int id, ArrayList<Tema> temas) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.id = id;
+        this.temas = new ArrayList<Tema>();     
+    }
+    
+    /**
+     * GETTERS
+     * =======
+     */
+    
+    public String getTitulo() {
+        return titulo;
+    }
+    
+    public String getAutor() {
+        return autor;
+    }
+    
+    public int getId () {
+        return id;
+    }
+    
+    /**
+     * SETTERS
+     * =======
+     */
+    
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+    
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+    
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     
 }
