@@ -106,4 +106,14 @@ public class Biblioteca extends FacilitySet
         }
         return null;
     }
+
+    /**
+    *
+    *
+    *
+    */
+    public ArrayList<Clasificacion> getAllClasificacion()
+    {
+        return clasifi;
+    }
 }
