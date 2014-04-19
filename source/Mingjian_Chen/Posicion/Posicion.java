@@ -1,4 +1,5 @@
 
+
 import java.io.IOException;
 
 /**
@@ -6,7 +7,8 @@ import java.io.IOException;
  * posicion vacía si no haya libro. 
  * @author Mingjian Chen 
  */
-public class Posicion {
+public class Posicion 
+{
     
     private int posX;
     private int posY;
@@ -15,14 +17,13 @@ public class Posicion {
     
     public Posicion() 
     {   
-
+        this.empty = true;
     }
     
     public Posicion(int posX, int posY)
     {
         this.posX = posX;
         this.posY = posY;
-        this.libro = null;
         this.empty = true;
     }
 
@@ -54,26 +55,19 @@ public class Posicion {
         posY = y;
     }
 
-    public boolean esEmpty(int x, int y)
+    public boolean esEmpty()
     {
-        Posicion p = new Posicion(x, y);   //Dude 
-        if(not p.empty) return false;
-        return true;
+        return empty;
     }
 
-    public Libro getLibro(int x, int y)
+    public Libro getLibro()
     {
-        if(not esEmpty(x, y))
-        {
-            Posicion p = new Posicion(x, y);
-            return p.libro;
-        }
-        return null;
+        return libro;
     }
 
     public void quitarLibro(int x, int y) throws IOException
     {
-        if(not esEmpty(x, y))
+        if(! this.esEmpty())
         {
             Posicion p = new Posicion(x, y);
             p.empty = true;
@@ -88,9 +82,9 @@ public class Posicion {
      * 
      *
      */
-    public void colocarLibro(int x, int y, Libro l)
+    public void colocarLibro(Libro l)
     {
-        Posicion p = new Posicion(x, y, l);
-        p.libro = l;
+        this.libro = l;
+        this.empty = false;
     }
 }
