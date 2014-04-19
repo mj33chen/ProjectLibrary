@@ -2,7 +2,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  * 
@@ -25,118 +24,140 @@ public class DriverPosicion
         Posicion p = new Posicion();
 
 		boolean exit = false;
-		while(not exit)
+		while(! exit)
 		{
 			menu();
 
 			int opcion = Integer.parseInt(buffer.readLine());
 			switch(opcion)
 			{
-				case 0:
-					System.out.println("Informacion sobre la posición" + NEW_LINE);
-					System.out.println("Introduzca la variable x y la variable y" + NEW_LINE);
-					System.out.println(">> " + NEW_LINE);
-					int x = (buffer.readLine());
-		                	System.out.println("x leido" + NEW_LINE);
-		                	System.out.println(">> " + NEW_LINE);
-		                	int y = (buffer.readLine());
-		                	System.out.println("y leido" + NEW_LINE);
+				case 1:
+					System.out.println("Informacion sobre la posición");
+					System.out.println("posición x: " + p.getPosX());
+                    System.out.println("posición y: " + p.getPosY());
 
-					if(p.esEmpty(x, y))
-					{
-						System.out.println("La posición es vacia" + NEW_LINE);
-					}
-					else 
-					{
-						Libro libro = getLibro(x, y);
-						libro.mostrarLibro();  // lo que faltaba la clase Libro
-					}
+                    if(p.esEmpty()) 
+                    {
+                    	System.out.println("Posición vacía" + NEW_LINE);
+                    }
+                    else 
+                    {
+                    	Libro l = p.getLibro();
+                    	System.out.println("Información de libro: " + NEW_LINE);
+				        System.out.println("titulo: " + l.getTitulo());
+				        System.out.println("autor: " + l.getAutor());
+				        System.out.println("identificador: " + l.getId());
+				        System.out.println("temas: ");
+				        int num = l.getNumTemas();
+				        System.out.println("numero de temas: " + num);
+				        ArrayList<Tema> temas = new ArrayList<Tema>();
+				        temas = l.getVector();
+				        for(int i = 0; i < num; ++i)
+				        {
+				        	Tema t = temas.get(i);
+				        	System.out.println(t.getNombre() + " ");
+				        }
+                    }
+
 					break;
 
-				case 1: 
-					System.out.println("posición x:" + NEW_LINE);
-		                	p.setPosX(Integer.parseInt(buffer.readLine()));
-		
-		                    	System.out.println("posició de y" + NEW_LINE);
-		                    	p.setPosY(Integer.parseInt(buffer.readLine()));
+				case 2: 
+					System.out.println("Pon un valor a la posición x:");
+			                    p.setPosX(Integer.parseInt(buffer.readLine()));
+			                    System.out.println("Parametro x se ha modificado:" + NEW_LINE);
+			
+			                    System.out.println("Pon un valor a la posició de y");
+			                    p.setPosY(Integer.parseInt(buffer.readLine()));
+			                    System.out.println("Parametro y se ha modificado:" + NEW_LINE);
+			
+			                    break;
 
-                    			break;
-
-				case 2:
+				case 3:
 					System.out.println("selecciona una varible para modificar su valor" + NEW_LINE);
 					System.out.println("con la opcion 1 si desea la variable x" + NEW_LINE);
 					System.out.println("con la opcion 2 si desea la variable y" + NEW_LINE);
-			                    System.out.println("con la opcion 0 si desea salir" + NEW_LINE);
-			                    int op = Integer.parseInt(buffer.readLine());
-			                    switch (op) 
-			                    {
-			                        case 1:
-			                            p.setPosX(Integer.parseInt(buffer.readLine()));
-			                            break;
-			                        case 2:
-			                            p.setPosY(Integer.parseInt(buffer.readLine()));
-			                            break;
-			                        default:
-			                            break;
-			                    }
-			                    break;
-		
-		                case 3:
-		                	System.out.println("Introduzca los datos del libro" + NEW_LINE);
-		
-		                	System.out.println("Titulo:" + NEW_LINE);
-		                	String titulo = (buffer.readLine());
-		
-		                	System.out.println("Autor:" + NEW_LINE);
-		                	String autor = (buffer.readLine());
-		
-		                	System.out.println("Identificador:" + NEW_LINE);
-		                	int id = (buffer.readLine());
-		
-		                	System.out.println("Temas asignados:" + NEW_LINE);
-		                	ArrayList<String> temas = new ArrayList<String>;
-		                	Scanner sc = new Scanner(System.in);
-					        while(sc.hasNext())
-					        {
-					        	String s = sc.next();
-					        	temas.add(s);
-					        }
-		                	Libro l = new Libro(titulo, autor, id, temas);
-		
-		                	System.out.println("Introduzca la variable x y la variable y" + NEW_LINE);
-		                	System.out.println("x leido" + NEW_LINE);
-		                	int x = (buffer.readLine());
-		                	System.out.println("y leido" + NEW_LINE);
-		                	int y = (buffer.readLine());
-		                	p.colocarLibro(x, y, l);
-		                	break;
+		                    System.out.println("con la opcion 0 si desea salir" + NEW_LINE);
+		                    int op = Integer.parseInt(buffer.readLine());
+		                    switch (op) 
+		                    {
+		                        case 1:
+		                        	System.out.println("Pon un valor a la posición x:");
+		                            p.setPosX(Integer.parseInt(buffer.readLine()));
+		                            System.out.println("Parametro x se ha modificado:" + NEW_LINE);
+		                            break;
+		                        case 2:
+		                        	System.out.println("Pon un valor a la posició de y");
+		                            p.setPosY(Integer.parseInt(buffer.readLine()));
+		                            System.out.println("Parametro y se ha modificado:" + NEW_LINE);
+		                            break;
+		                        default:
+		                            break;
+		                    }
+		                    break;
 
-				case 4:
+                case 4:
+                	System.out.println("Introduzca los datos del libro");
+
+                	System.out.println("Titulo:");
+                	String titulo = (buffer.readLine());
+
+                	System.out.println("Autor:");
+                	String autor = (buffer.readLine());
+
+                	System.out.println("Identificador:");
+                	int id = Integer.parseInt(buffer.readLine());
+
+                	Libro l = new Libro(titulo, autor, id);
+
+                	System.out.println("Numero de temas: ");
+                	int num = Integer.parseInt(buffer.readLine());
+
+                	Tema t;
+                	System.out.println("Temas asignados: ");
+
+                	String line = null;
+                	int i = 0;
+		            while((line=buffer.readLine()) != null && (i < num))
+		            {
+		            	t = new Tema();
+		            	t.setNombre(line);
+				        	l.anadirTema(t);
+				        	++i;
+				        	if(i == num) System.out.println("Pon un culaquier caracter para salir: ");
+				        }
+		
+		
+		        	p.colocarLibro(l);
+		        	System.out.println("Libro colocado" + NEW_LINE);
+
+                	break;
+
+				case 0:
 					exit = true;
                     			break;
                     
 				default: 
 					System.out.println("Opcion Invalida!");
-                    break;
+                	break;
 			}
 		}
 	}
 
 	private static void introduccion()
 	{
-		System.out.println("-----------------------" + NEW_LINE);
-        System.out.println("| Driver de Posicion |" + NEW_LINE);
-        System.out.println("------------------------" + NEW_LINE);
+		System.out.println("-----------------------");
+        	System.out.println("| Driver de Posicion |");
+        	System.out.println("-----------------------" + NEW_LINE);
 	}
 
 	private static void menu()
 	{
-		System.out.println("Opciones:" + NEW_LINE);
-        System.out.println("0) Consultar la informacion de posicion" + NEW_LINE);
-        System.out.println("1) Modificar los parametros de posicion" + NEW_LINE);
-        System.out.println("2) Modificar un parametro de posicion" + NEW_LINE);
-        System.out.println("3) Colocar un libro a una posicion" + NEW_LINE);
-        System.out.println("4) exit" + NEW_LINE);
-        System.out.println(">> ");
+		System.out.println("Opciones:");
+	        System.out.println("1) Consultar la informacion de posicion");
+	        System.out.println("2) Modificar los parametros de posicion");
+	        System.out.println("3) Modificar un parametro de posicion");
+	        System.out.println("4) Colocar un libro a una posicion");
+	        System.out.println("0) exit");
+	        System.out.println(">> " + NEW_LINE);
 	}
 }
