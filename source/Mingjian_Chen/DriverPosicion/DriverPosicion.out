@@ -1,0 +1,154 @@
+-----------------------
+| Driver de Posicion |
+-----------------------
+
+Creamos una nueva posicion
+
+Opciones:
+1) Consultar la informacion de posicion
+2) Modificar los parametros de posicion
+3) Modificar un parametro de posicion
+4) Colocar un libro a una posicion
+5) Quitar un libro de una posicion
+0) exit
+>> 
+
+Informacion sobre la posición
+posición x: 0
+posición y: 0
+Posición vacía
+
+Opciones:
+1) Consultar la informacion de posicion
+2) Modificar los parametros de posicion
+3) Modificar un parametro de posicion
+4) Colocar un libro a una posicion
+5) Quitar un libro de una posicion
+0) exit
+>> 
+
+Posicion vacia, no hay libro para quitar
+
+Opciones:
+1) Consultar la informacion de posicion
+2) Modificar los parametros de posicion
+3) Modificar un parametro de posicion
+4) Colocar un libro a una posicion
+5) Quitar un libro de una posicion
+0) exit
+>> 
+
+Pon un valor a la posición x:
+Parametro x se ha modificado:
+
+Pon un valor a la posició de y
+Parametro y se ha modificado:
+
+Opciones:
+1) Consultar la informacion de posicion
+2) Modificar los parametros de posicion
+3) Modificar un parametro de posicion
+4) Colocar un libro a una posicion
+5) Quitar un libro de una posicion
+0) exit
+>> 
+
+selecciona una varible para modificar su valor
+
+con la opcion 1 si desea la variable x
+
+con la opcion 2 si desea la variable y
+
+con la opcion 0 si desea salir
+
+Pon un valor a la posició de y
+Parametro y se ha modificado:
+
+Opciones:
+1) Consultar la informacion de posicion
+2) Modificar los parametros de posicion
+3) Modificar un parametro de posicion
+4) Colocar un libro a una posicion
+5) Quitar un libro de una posicion
+0) exit
+>> 
+
+Informacion sobre la posición
+posición x: 3
+posición y: 2
+Posición vacía
+
+Opciones:
+1) Consultar la informacion de posicion
+2) Modificar los parametros de posicion
+3) Modificar un parametro de posicion
+4) Colocar un libro a una posicion
+5) Quitar un libro de una posicion
+0) exit
+>> 
+
+Introduzca los datos del libro
+Identificador >>
+Titulo >>
+Autor >>
+Numero de temas: 
+Introduzca nombre de tema: 
+Pon un culaquier caracter para salir: 
+Libro colocado
+
+Opciones:
+1) Consultar la informacion de posicion
+2) Modificar los parametros de posicion
+3) Modificar un parametro de posicion
+4) Colocar un libro a una posicion
+5) Quitar un libro de una posicion
+0) exit
+>> 
+
+Informacion sobre la posición
+posición x: 3
+posición y: 2
+Información de libro: 
+
+titulo: adas
+autor: dad
+identificador: 133
+temas: 
+numero de temas: 3
+a 
+b 
+c 
+Opciones:
+1) Consultar la informacion de posicion
+2) Modificar los parametros de posicion
+3) Modificar un parametro de posicion
+4) Colocar un libro a una posicion
+5) Quitar un libro de una posicion
+0) exit
+>> 
+
+Libro quitado
+
+Opciones:
+1) Consultar la informacion de posicion
+2) Modificar los parametros de posicion
+3) Modificar un parametro de posicion
+4) Colocar un libro a una posicion
+5) Quitar un libro de una posicion
+0) exit
+>> 
+
+Informacion sobre la posición
+posición x: 3
+posición y: 2
+Posición vacía
+
+Opciones:
+1) Consultar la informacion de posicion
+2) Modificar los parametros de posicion
+3) Modificar un parametro de posicion
+4) Colocar un libro a una posicion
+5) Quitar un libro de una posicion
+0) exit
+>> 
+
