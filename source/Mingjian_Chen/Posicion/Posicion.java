@@ -65,16 +65,10 @@ public class Posicion
         return libro;
     }
 
-    public void quitarLibro(int x, int y) throws IOException
+    public void quitarLibro()
     {
-        if(! this.esEmpty())
-        {
-            Posicion p = new Posicion(x, y);
-            p.empty = true;
-            p.libro = null;
-        }
-        else 
-            throw new IOException("No hay libro para quitar en la posicion " + x + " " + y);
+        this.empty = true;
+        this.libro = null;
     }
 
     /**
