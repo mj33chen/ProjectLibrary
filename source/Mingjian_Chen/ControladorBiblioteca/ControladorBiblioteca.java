@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import javax.swing.tree;
 import java.io.IOException;
 
 /**
@@ -9,90 +8,127 @@ import java.io.IOException;
 
 public class ControladorBiblioteca
 {
+
+	private ControladorBiblioteca controlBiblio;
+
 	private Biblioteca biblio;
 
-	/**
-     * Creadora
-     */
-	public ControladorBiblioteca()
+	public ControladorBiblioteca(String nombre)
 	{
-		biblio = null;
+		this.biblio = new Biblioteca(nombre);  
 	}
 
 	/**
-     * Crea una nueva biblioteca en el sistema
-     * @param n Indica el nombre de la nueva biblioteca. 
-     */
-	public nuevaBiblioteca(String n)
+	*
+	*
+	*/
+	public String[] infoLibro(int id)
 	{
-		biblio = new Biblioteca(n);
+		String[] list = new String[4];
+		Libro l = biblio.getLibro(id);
+		list[0] = Integer.toString(l.getId());
+		list[1] = l.getTitulo();
+        list[2] = l.getAutor();
+        list[3] = Integer.toString(l.getNumTemas());
+        return list;
 	}
 
 	/**
-	 * Añadir una clasificación en el sistema, basando en  
-	 * @param n Indica el nombre de la clasificación añadida
-	 * @throws IOException No se puede añadir la clasificación en el sistema 
-	 */
-	public void anadirClasifi(Clasificacion c) throws IOException
+	*
+	*
+	*/
+	public ArrayList<String[]> getCatalogo() 
 	{
-		biblio.anadirClasifi(c);
-	}
-
-	public void eliminarClasifi(String n)
-	{
-		biblio.eliminarClasifi(n);
-	}
-
-	public Clasificacion getClasificacion(String nom)
-	{
-		return biblio.getClasificacion(nom);
-	}
-
-	public ArrayList<String[]> getAllClasifi()
-	{
-		ArrayList<String[]> ret = new ArrayList<String[]>();
-        ArrayList<Clasificacion> clasi = biblio.getAllClasifi();
-        for (Clasificacion c : clasi) 
-        {
-            String[] s = new String[2];
-            s[0] = "nombre: " + c.getNombre();
-            s[1] = "numero de temas: " + c.getNumTemas();
-            ret.add(s);
-        }
-        return ret;
-	}
-
-	public ArrayList<String[]> getAllLibros()
-	{
-		ArrayList<String[]> ret = new ArrayList<String[]>();
-        ArrayList<Libro> libros = biblio.getAllLibros();
-        for (Libro l : libros) 
-        {
-            String[] s = new String[3];
-            s[0] = "titulo: " + l.getTitulo();
-            s[1] = "autor: " + l.getAutor();
-            s[2] = "identificador: " + l.getId();
-            ret.add(s);
-        }
-        return ret;
+		ArrayList<String[]> list = new ArrayList<String[]>();
+		for (int i = 0; i < biblio.librosSize(); ++i) 
+		{
+			String[] v = new String[4];
+			Libro l = biblio.getLibroIndex(i);
+			v[0] = Integer.toString(l.getId());
+			v[1] = l.getTitulo();
+	        v[2] = l.getAutor();
+	        v[3] = Integer.toString(l.getNumTemas());
+	        list.add(v);
+	    }
+	    return list;   
 	}
 
 	/**
-     * Retorna la matriz del flujo 
-     * @return La matriu de distancias entre los libros colocados 
-     */
-	public int[][] getMatriz()    
-	{									
-		return biblio.getFlux(); // posiblemente en la clase compartida falta esta función 
+	*
+	*
+	*/
+	public String consultarNombreBiblio()
+	{
+		return biblio.getNombre();
 	}
 
 	/**
-     * Retorna la biblioteca del sistema
-     * @return La biblioteca del sistema
-     */
-	public Biblioteca getBiblioteca()
+	*
+	*
+	*/
+	public void modificarNombreBiblio(String nombre)
 	{
-		return biblio;
+		biblio.setNombre(nombre);
+	}
+
+	/**
+	*
+	*
+	*/
+	public void modificarLibro(int id, String titulo, String autor)
+	{
+		biblio.modificarLibro(id, titulo, autor);
+	}
+
+	/**
+	* PRIMERO CREAR EL LIBRO, Y LUEGO ASIGNAR LOS TEMAS AL LIBRO !!!!!!·$%"·$·%·"
+	*
+	*/
+	public void anadirLibro(int id, String titulo, String autor)
+	{
+		Libro l = new Libro();
+		l.setId(id);
+		l.setTitulo(titulo);
+        l.setAutor(autor);
+        biblio.anadirLibro(l);
+	}
+
+	/**
+	*
+	*
+	*/
+	public void anadirTemaLibro(String nombre, String tema) throws IOException
+	{
+		//Tema t = new Tema();
+		//t.setNombre(tema);
+		biblio.anadirTemaLibro(nombre, tema);
+	}
+
+	/**
+	*
+	*
+	*/
+	public void eliminarLibro(int id)
+	{
+		biblio.eliminarLibro(id);
+	}
+
+	/**
+	*
+	*
+	*/
+	public boolean isEmpty()
+	{
+		return biblio.biblioEmpty();
+	}
+
+	/**
+	*
+	*
+	*/
+	public int size()
+	{
+		return biblio.librosSize();
 	}
 
 }
