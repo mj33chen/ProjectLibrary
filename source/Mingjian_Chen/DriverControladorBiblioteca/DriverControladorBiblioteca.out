@@ -1,0 +1,192 @@
+-----------------------------------
+| Driver de Controlador Biblioteca |
+-----------------------------------
+Creamos un controlador de biblioteca
+
+Nombre de biblioteca: 
+
+Biblioteca creada con el nombre: BRGF
+
+Opciones:
+1) Consultar la info. de libro
+2) Consultar el catalogo de biblioteca
+3) Modificar un libro
+4) Añadir un libro
+5) Eliminar un libro
+6) Consultar si el catalogo es vacio
+7) Modificar el nombre de biblioteca
+8) Consultar el nombre de biblioteca
+9) Anadir tema
+0) exit
+>> 
+
+nombre de la biblioteca: BRGF
+
+Opciones:
+1) Consultar la info. de libro
+2) Consultar el catalogo de biblioteca
+3) Modificar un libro
+4) Añadir un libro
+5) Eliminar un libro
+6) Consultar si el catalogo es vacio
+7) Modificar el nombre de biblioteca
+8) Consultar el nombre de biblioteca
+9) Anadir tema
+0) exit
+>> 
+
+Crear un libro
+Identificador >>
+Titulo >>
+Autor >>
+Libro anadido
+
+Opciones:
+1) Consultar la info. de libro
+2) Consultar el catalogo de biblioteca
+3) Modificar un libro
+4) Añadir un libro
+5) Eliminar un libro
+6) Consultar si el catalogo es vacio
+7) Modificar el nombre de biblioteca
+8) Consultar el nombre de biblioteca
+9) Anadir tema
+0) exit
+>> 
+
+Introducid el titulo del libro >> 
+Introducid el nombre del tema >> 
+Tema anadido
+
+Opciones:
+1) Consultar la info. de libro
+2) Consultar el catalogo de biblioteca
+3) Modificar un libro
+4) Añadir un libro
+5) Eliminar un libro
+6) Consultar si el catalogo es vacio
+7) Modificar el nombre de biblioteca
+8) Consultar el nombre de biblioteca
+9) Anadir tema
+0) exit
+>> 
+
+Biblioteca NO vacia.
+
+Hay 1 libros en total
+
+Opciones:
+1) Consultar la info. de libro
+2) Consultar el catalogo de biblioteca
+3) Modificar un libro
+4) Añadir un libro
+5) Eliminar un libro
+6) Consultar si el catalogo es vacio
+7) Modificar el nombre de biblioteca
+8) Consultar el nombre de biblioteca
+9) Anadir tema
+0) exit
+>> 
+
+Introducid el identificador del libro >> 
+
+Informacion del libro: 
+
+identificador: 12
+titulo: Xarxa_Computadors
+autor: Llorenc
+num de temas: 1
+Opciones:
+1) Consultar la info. de libro
+2) Consultar el catalogo de biblioteca
+3) Modificar un libro
+4) Añadir un libro
+5) Eliminar un libro
+6) Consultar si el catalogo es vacio
+7) Modificar el nombre de biblioteca
+8) Consultar el nombre de biblioteca
+9) Anadir tema
+0) exit
+>> 
+
+Libro: 1
+Id: 12
+Titulo: Xarxa_Computadors
+Autor: Llorenc
+Num. temas: 1
+
+Opciones:
+1) Consultar la info. de libro
+2) Consultar el catalogo de biblioteca
+3) Modificar un libro
+4) Añadir un libro
+5) Eliminar un libro
+6) Consultar si el catalogo es vacio
+7) Modificar el nombre de biblioteca
+8) Consultar el nombre de biblioteca
+9) Anadir tema
+0) exit
+>> 
+
+Crear un libro
+Identificador >>
+Titulo >>
+Autor >>
+Libro anadido
+
+Opciones:
+1) Consultar la info. de libro
+2) Consultar el catalogo de biblioteca
+3) Modificar un libro
+4) Añadir un libro
+5) Eliminar un libro
+6) Consultar si el catalogo es vacio
+7) Modificar el nombre de biblioteca
+8) Consultar el nombre de biblioteca
+9) Anadir tema
+0) exit
+>> 
+
+Libro: 1
+Id: 12
+Titulo: Xarxa_Computadors
+Autor: Llorenc
+Num. temas: 1
+
+Libro: 2
+Id: 1234
+Titulo: introduccio_fisica
+Autor: Joan
+Num. temas: 0
+
+Opciones:
+1) Consultar la info. de libro
+2) Consultar el catalogo de biblioteca
+3) Modificar un libro
+4) Añadir un libro
+5) Eliminar un libro
+6) Consultar si el catalogo es vacio
+7) Modificar el nombre de biblioteca
+8) Consultar el nombre de biblioteca
+9) Anadir tema
+0) exit
+>> 
+
+Biblioteca NO vacia.
+
+Hay 2 libros en total
+
+Opciones:
+1) Consultar la info. de libro
+2) Consultar el catalogo de biblioteca
+3) Modificar un libro
+4) Añadir un libro
+5) Eliminar un libro
+6) Consultar si el catalogo es vacio
+7) Modificar el nombre de biblioteca
+8) Consultar el nombre de biblioteca
+9) Anadir tema
+0) exit
+>> 
+
+

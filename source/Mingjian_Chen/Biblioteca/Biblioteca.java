@@ -1,19 +1,17 @@
 import java.util.ArrayList;
 import java.util.Iterator;
-import javax.swing.tree;
 import java.io.IOException;
 
 /**
- * Una clase Biblioteca representa un conjunto de libros,
- * una biblioteca puede contener una o más clasificaciones. 
+ * Una clase Biblioteca representa un conjunto de libros.  
  * @author Mingjian Chen
  */
 
-public class Biblioteca extends FacilitySet
+public class Biblioteca
 {
-    private Clasificacion clasi_actual;
-	private ArrayList<Clasificacion> clasifi;
-	private ArrayList<Libro> libros;
+    private String nombre;
+    //private Clasificacion clasi_actual;
+	ArrayList<Libro> libros;
 
 
 	/**
@@ -21,69 +19,56 @@ public class Biblioteca extends FacilitySet
     * @param nombre El nombre de la biblioteca creada
     * @return la clase Biblioteca 
     */
-    public Biblioteca(String n, ClasificacionPre c)
+    public Biblioteca(String nombre)
     {
-    	this.name = n;
+    	this.nombre = nombre;
     	libros = new ArrayList<Libro>();
-    	clasifi = new ArrayList<Clasificacion>();
-        clasi_actual = c;
+        //clasi_actual = null;
     }
 
-    /**
-    *
-    *
-    *
-    */
-    public int getNumClasifi()
+    public void modificarLibro(int id, String titulo, String autor)
     {
-    	return (1 + clasifi.size());
-    }
-
-
-    /**
-    *
-    *
-    *
-    */
-    public boolean existeClasifi(String nombre) 
-    {
-        if (Clasificacion c : clasifi)
-        {
-            if(c.getnombreClasifi().equal(nombre)) return true;
+        for (Libro l : libros) {
+            if (l.getId() == id) 
+            {
+                l.setTitulo(titulo);
+                l.setAutor(autor);
+                break;
+            }
         }
-        return false;
     }
 
     /**
-     *
-     *
-     *
-     *
-     */
-    public void assignarClasifi(Clasificacion c)
-    {
-        clasi_actual = c;
-    }
-
-    /**
-    * Añadir una clasificación a la biblioteca del sistema
-    * @param nombre Indica el nombre de la clasificación. 
-    * @param tree Indica la estrutura de datos de la clasificación. 
-    * @throws IOException Si la clasificación existe en la biblioteca
-    *           con el dicho nombre  
+    * Añadir libro a la biblioteca del sistema    // unique 
+    * @param l
     */
-    public void anadirClasifi(Clasificacion c) throws IOException
+    public void anadirLibro(Libro l) 
     {
+        // comprobar el id
+        Libro aux = new Libro();
+        aux = l;
+        libros.add(aux);
+    }
 
-        String n = c.getnombreClasifi();
-        if(not this.existeClasifi(n))
+    /**
+    *
+    *
+    */
+    public void anadirTemaLibro(String nombre, String nombre_) throws IOException
+    {
+        Libro l = _getLibro(nombre);
+        if(l != null)
         {
-            clasifi.add(c);
-        } 
+            if(l.noExistido(nombre_))
+            {
+                Tema t = new Tema(nombre_);
+                l.anadirTema(t);
+            }
+            else 
+                throw new IOException("Tema existido!");
+        }
         else 
-        {
-            throw new IOException("Clasificacion existida");
-        }	
+            throw new IOException("Titulo incorrecto!");
     }
 
 	/**
@@ -91,16 +76,18 @@ public class Biblioteca extends FacilitySet
     *
     *
     */
-    public void eliminarClasifi(String nombre)
+    public void eliminarLibro(int id)
     {
-       	Iterator it = clasifi.iterator();
-   		while (it.hasNext()) 
+       	int i = 0;        
+        for (Libro l : libros) 
         {
-            Clasificacion clasi = new Clasificacion();
-            clasi = (Clasificacion) it.next();
-            if (clasi.getnombreClasifi().equal(it.getnombreClasifi())) 
-                it.remove(clasi); 
-        }  
+            if (l.getId() == id) 
+            {
+                libros.remove(i);
+                break;
+            }
+            ++i;
+        }
     }
 
     /**
@@ -108,13 +95,11 @@ public class Biblioteca extends FacilitySet
     *
     *
     */
-    public Clasificacion getClasificacion(String nombre)
+    public Libro _getLibro(String nombre) 
     {
-    	Iterator it = clasifi.iterator();
-        while (it.hasNext()) {
-            Clasificacion clasi = new Clasificacion();
-            clasi = (Clasificacion) it.next();
-            if (clasi.getnombreClasifi().equal(tree.getnombreClasifi())) return clasi;
+        for(Libro l : libros)
+        {
+            if(l.getTitulo().equals(nombre)) return l;
         }
         return null;
     }
@@ -124,8 +109,46 @@ public class Biblioteca extends FacilitySet
     *
     *
     */
-    public ArrayList<Clasificacion> getAllClasificacion()
+    public Libro getLibro(int id) 
     {
-        return clasifi;
+    	for(Libro l : libros)
+        {
+            if(l.getId() == id) return l;
+        }
+        return null;
     }
+
+    /**
+    *
+    *
+    */
+    public Libro getLibroIndex(int index)
+    {
+        return libros.get(index);
+    }
+
+    public String getNombre()
+    {
+        return nombre;
+    }
+
+    public void setNombre(String nombre)
+    {
+        this.nombre = nombre;
+    }
+
+    public boolean biblioEmpty()
+    {
+        return libros.isEmpty();
+    }
+
+    public int librosSize() 
+    {
+        return libros.size();
+    }
+
+    /*public Clasificacion getClasificacion()
+    {
+        return clasi_actual;
+    }*/
 }

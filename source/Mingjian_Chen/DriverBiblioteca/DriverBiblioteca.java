@@ -2,7 +2,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import javax.swing.tree;
 
 public class DriverBiblioteca
 {
@@ -16,60 +15,107 @@ public class DriverBiblioteca
 		InputStreamReader iostream = new InputStreamReader(System.in);
         BufferedReader buffer = new BufferedReader (iostream);
 
+        System.out.println("Creamos una nueva biblioteca, pon un nombre para crear" + NEW_LINE);
+		String nombre = buffer.readLine();
+        Biblioteca b = new Biblioteca(nombre);
+        System.out.println("Biblioteca creada con el nombre: " + b.getNombre() + NEW_LINE);
 		boolean exit = false;
-		while(not exit)
+		while(! exit)
 		{
 			menu();
 			
-			System.out.println("Creamos una nueva biblioteca" + NEW_LINE);
-			String nombre = buffer.readLine();
-        	Biblioteca b = new Biblioteca(nombre);
-        	System.out.println("Biblioteca creada con el nombre: " + b.getName() + NEW_LINE);
+			
+        	Libro libro = new Libro();
+        	Tema tema = new Tema();
+        	int id;
 
 			int opcion = Integer.parseInt(buffer.readLine());
 			switch(opcion)
 			{
-				case 0: 
-					System.out.println("Nombre de biblioteca:" + NEW_LINE);
-					System.out.println(b.getName() + NEW_LINE);
-					break;
-
-				case 1:
-					System.out.println("Se ha modificado el nombre de la biblioteca" + NEW_LINE);
-					b.setName(buffer.readLine());
+				case 1: 
+					System.out.println("Nombre de biblioteca: " + b.getNombre() + NEW_LINE);
 					break;
 
 				case 2:
-					System.out.println("Numero total de clasificaciones:" + NEW_LINE);
-					System.out.println(b.getNumClasifi() + NEW_LINE);
+					System.out.println("Introducid un nombre de la biblioteca" + NEW_LINE);
+					b.setNombre(buffer.readLine());
+					System.out.println("Se ha modificado el nombre de la biblioteca" + NEW_LINE);
 					break;
 
 				case 3:
-					System.out.println("Añadir una clasificacion" + NEW_LINE);
-					// Dude
+					System.out.println("Numero total de libros: " + b.librosSize() + NEW_LINE);
+					break;
 
 				case 4:
-					System.out.println("Eliminar una clasificacion" + NEW_LINE);
-					String nombre = (buffer.readLine());
-					b.eliminarClasifi(nombre);
+					System.out.println("Crear un libro");
+
+					System.out.println("Identificador >>");
+					libro.setId(Integer.parseInt(buffer.readLine()));
+
+					System.out.println("Titulo >>");
+					libro.setTitulo(buffer.readLine());
+
+					System.out.println("Autor >>");
+					libro.setAutor(buffer.readLine());
+
+					b.anadirLibro(libro);
+					System.out.println("Libro anadido" + NEW_LINE);
 					break;
 
 				case 5:
-					System.out.println("Informacion de la clasificacion" + NEW_LINE);
-					String nombre = (buffer.readLine());
-					Clasificacion c = new Clasificacion();
-					c = n.getClasificacion(nombre);
-					if(c != null) 
-						System.out.println("Numero de temas: " + NEW_LINE) // Dude
-						System.out.println("Lista de temas: "); // Dude
-						break;
+					System.out.println("Anadir un tema a un libro"  + NEW_LINE);
+
+					System.out.println("Introducid el titulo del libro >> ");
+					String titulo = (buffer.readLine());
+					System.out.println("Introducid el nombre del tema >> ");
+					String titulo_ = (buffer.readLine());
+					b.anadirTemaLibro(titulo, titulo_);
+
+					System.out.println("Tema anadido" + NEW_LINE);
+					break;
 
 				case 6:
-					System.out.println("Numero de libros de biblioteca: " + NEW_LINE);
-					System.out.println(b.size() + NEW_LINE);
+					System.out.println("Introducid el identificador para eliminar el libro >> " + NEW_LINE);
+
+					id = (Integer.parseInt(buffer.readLine()));
+					b.eliminarLibro(id);
+					System.out.println("Libro eliminado");
 					break;
 
 				case 7:
+					System.out.println("Introducid el identificador del libro >> " + NEW_LINE);
+					id = (Integer.parseInt(buffer.readLine()));
+					libro = b.getLibro(id);
+
+					System.out.println("Informacion del libro: " + NEW_LINE);
+					System.out.println("identificador: " + libro.getId());
+					System.out.println("titulo: " + libro.getTitulo());
+					System.out.println("autor: " + libro.getAutor());
+
+					if(libro.libroEmpty()) System.out.println("Libro sin tema" + NEW_LINE);
+					else libro.showTema();
+					break;
+
+				case 8:
+					System.out.println("Introducid el identificador del libro para modificar >> " + NEW_LINE);
+					id = (Integer.parseInt(buffer.readLine()));
+
+					System.out.println("titulo >> ");
+					titulo = (buffer.readLine());
+
+					System.out.println("autor >> ");
+                    String autor = (buffer.readLine());
+
+                    b.modificarLibro(id, titulo, autor);
+                    System.out.println("Libro modificado >> " + NEW_LINE);
+                    break;
+
+				case 9:
+					if(b.biblioEmpty()) System.out.println("Biblioteca vacia." + NEW_LINE);
+					else System.out.println("Biblioteca NO vacia." + NEW_LINE);
+					break;
+
+				case 0:
 					exit = true;
                     break;
                     
@@ -82,23 +128,25 @@ public class DriverBiblioteca
 
 	private static void introduccion()
 	{
-		System.out.println("-----------------------" + NEW_LINE);
-        System.out.println("| Driver de Biblioteca |" + NEW_LINE);
-        System.out.println("------------------------" + NEW_LINE);
+		System.out.println("-----------------------");
+        System.out.println("| Driver de Biblioteca |");
+        System.out.println("------------------------");
 	}
 
 	private static void menu()
 	{
-		System.out.println("Opciones:" + NEW_LINE);
-        System.out.println("0) Consultar el nombre de biblioteca" + NEW_LINE);
-        System.out.println("1) Modificar el nombre de biblioteca" + NEW_LINE);
-        System.out.println("2) Consultar el numero total de la clasificación" + NEW_LINE);
-        System.out.println("3) Añadir una clasificación" + NEW_LINE);
-        System.out.println("4) Eliminar una clasificación" + NEW_LINE);
-        System.out.println("5) Consultar clasificación" + NEW_LINE);    
-        System.out.println("6) Consultar el numero total de libros" + NEW_LINE);    
-        System.out.println("7) exit" + NEW_LINE);
-        System.out.println(">> ");
+		System.out.println("Opciones:");
+        System.out.println("1) Consultar el nombre de biblioteca");
+        System.out.println("2) Modificar el nombre de biblioteca");
+        System.out.println("3) Consultar el numero total de libros");
+        System.out.println("4) Añadir un libro");
+        System.out.println("5) Añadir un tema");
+        System.out.println("6) Eliminar un libro");
+        System.out.println("7) Consultar un libro"); 
+        System.out.println("8) Modificar un libro"); 
+        System.out.println("9) Consultar si el catalogo es vacio");    
+        System.out.println("0) exit");
+        System.out.println(">> " + NEW_LINE);
 	}
 
 

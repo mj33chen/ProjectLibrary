@@ -5,20 +5,20 @@ import java.util.ArrayList;
  * Cada nodo de la clasificación es un tema...
  * @author Isma
  */
-public class Tema {
+public class Tema
+{
 
     private String nombre;
 
     private Tema padre;
 
-    //private Tema[] hijo;
     private ArrayList<Tema> hijo;
 
-    private int totalNodos;
+    private int nivel;
 
-    //private String color;
-    //No decidido
-    //private ArrayList<Libro> libros;
+    private static int totalNodos = 0;
+
+    private String color;
 
     //-------------------------------------
     //-------------------------------------
@@ -27,35 +27,57 @@ public class Tema {
     {
         this.nombre = null;
         this.padre = null;
-        this.hijo = null;
-        this.totalNodos = 0;  
+        this.color = null;
+        this.nivel = 0;
+        this.hijo = new ArrayList<Tema>(); 
     }
     
-    public Tema(String nombre) {
+    public Tema(String nombre) 
+    {
         this.nombre = nombre;
         this.padre = null;
-        this.hijo = null;
-        this.totalNodos = 0;
-        //this.libros = new ArrayList<Libro>();
-    }
-
-    /**
-     *Crear un nodo con los parametros tema, nombre, y array hijo
-     *@param tema El nodo pare 
-     *@param nombre El nombre del nodo 
-     *@param child Un array de los nodos hijo
-     */ 
-    public Tema(Tema tema, String nombre, ArrayList<Tema> child)
-    {
-        this.padre = tema;
-        this.hijo = child;
-        this.totalNodos = child.size();
-        this.nombre = nombre;
+        this.color = null;
+        this.nivel = 0;
+        this. hijo = new ArrayList<Tema>(); 
     }
 
    
     public String getNombre() {
         return nombre;
+    }
+
+    public String getColor()
+    {
+        return color;
+    }
+
+    public int getNivel()
+    {
+        return nivel;
+    }
+
+    public int getNumHijo()
+    {
+        return totalNodos;
+    }
+
+    public void setNivel(int level)
+    {
+        this.nivel = level;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setColor(String color)
+    {
+        this.color = color;
+    }
+
+    public void setPadre(Tema padre)
+    {
+        this.padre = padre;
     }
 
     public Tema getPadre()
@@ -68,20 +90,15 @@ public class Tema {
         return hijo;
     }
 
-    public int getNumHijo()
-    {
-        return totalNodos;
-    }
 
     public void addHijo(Tema t) throws IOException
     {
         if(t != null)
         {
-
             hijo.add(t);
         }
         else 
-            throw new IOException("Nodo Invalido!");
+            throw new IOException("No se puede anadir el tema!");
     }
 
     public void deleteHijo(Tema t) throws IOException
@@ -94,18 +111,15 @@ public class Tema {
                 throw new IOException("No tiene ningun nodo hijo");
         }
         else
-            throw new IOException("Nodo Invalido!");
+            throw new IOException("No se puede eliminar el tema!");
 
     }
 
-   public boolean esHermano(Tema t)
-   {
+    public boolean esHermano(Tema t)
+    {
         return (this.padre == t.padre);
-   }
-    
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
+    
 
      /*public String getColor() {
         return color;

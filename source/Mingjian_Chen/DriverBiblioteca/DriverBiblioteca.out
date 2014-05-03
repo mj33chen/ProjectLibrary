@@ -1,0 +1,182 @@
+-----------------------
+| Driver de Biblioteca |
+------------------------
+Creamos una nueva biblioteca, pon un nombre para crear
+
+Biblioteca creada con el nombre: BRGF
+
+Opciones:
+1) Consultar el nombre de biblioteca
+2) Modificar el nombre de biblioteca
+3) Consultar el numero total de libros
+4) Añadir un libro
+5) Añadir un tema
+6) Eliminar un libro
+7) Consultar un libro
+8) Modificar un libro
+9) Consultar si el catalogo es vacio
+0) exit
+>> 
+
+Nombre de biblioteca: BRGF
+
+Opciones:
+1) Consultar el nombre de biblioteca
+2) Modificar el nombre de biblioteca
+3) Consultar el numero total de libros
+4) Añadir un libro
+5) Añadir un tema
+6) Eliminar un libro
+7) Consultar un libro
+8) Modificar un libro
+9) Consultar si el catalogo es vacio
+0) exit
+>> 
+
+Introducid un nombre de la biblioteca
+
+Se ha modificado el nombre de la biblioteca
+
+Opciones:
+1) Consultar el nombre de biblioteca
+2) Modificar el nombre de biblioteca
+3) Consultar el numero total de libros
+4) Añadir un libro
+5) Añadir un tema
+6) Eliminar un libro
+7) Consultar un libro
+8) Modificar un libro
+9) Consultar si el catalogo es vacio
+0) exit
+>> 
+
+Biblioteca vacia.
+
+Opciones:
+1) Consultar el nombre de biblioteca
+2) Modificar el nombre de biblioteca
+3) Consultar el numero total de libros
+4) Añadir un libro
+5) Añadir un tema
+6) Eliminar un libro
+7) Consultar un libro
+8) Modificar un libro
+9) Consultar si el catalogo es vacio
+0) exit
+>> 
+
+Crear un libro
+Identificador >>
+Titulo >>
+Autor >>
+Libro anadido
+
+Opciones:
+1) Consultar el nombre de biblioteca
+2) Modificar el nombre de biblioteca
+3) Consultar el numero total de libros
+4) Añadir un libro
+5) Añadir un tema
+6) Eliminar un libro
+7) Consultar un libro
+8) Modificar un libro
+9) Consultar si el catalogo es vacio
+0) exit
+>> 
+
+Introducid el identificador del libro >> 
+
+Informacion del libro: 
+
+identificador: 123
+titulo: introduccio_fisica
+autor: Joan
+Libro sin tema
+
+Opciones:
+1) Consultar el nombre de biblioteca
+2) Modificar el nombre de biblioteca
+3) Consultar el numero total de libros
+4) Añadir un libro
+5) Añadir un tema
+6) Eliminar un libro
+7) Consultar un libro
+8) Modificar un libro
+9) Consultar si el catalogo es vacio
+0) exit
+>> 
+
+Crear un libro
+Identificador >>
+Titulo >>
+Autor >>
+Libro anadido
+
+Opciones:
+1) Consultar el nombre de biblioteca
+2) Modificar el nombre de biblioteca
+3) Consultar el numero total de libros
+4) Añadir un libro
+5) Añadir un tema
+6) Eliminar un libro
+7) Consultar un libro
+8) Modificar un libro
+9) Consultar si el catalogo es vacio
+0) exit
+>> 
+
+Introducid el identificador para eliminar el libro >> 
+
+Libro eliminado
+Opciones:
+1) Consultar el nombre de biblioteca
+2) Modificar el nombre de biblioteca
+3) Consultar el numero total de libros
+4) Añadir un libro
+5) Añadir un tema
+6) Eliminar un libro
+7) Consultar un libro
+8) Modificar un libro
+9) Consultar si el catalogo es vacio
+0) exit
+>> 
+
+Introducid el identificador del libro para modificar >> 
+
+titulo >> 
+autor >> 
+Libro modificado >> 
+
+Opciones:
+1) Consultar el nombre de biblioteca
+2) Modificar el nombre de biblioteca
+3) Consultar el numero total de libros
+4) Añadir un libro
+5) Añadir un tema
+6) Eliminar un libro
+7) Consultar un libro
+8) Modificar un libro
+9) Consultar si el catalogo es vacio
+0) exit
+>> 
+
+Anadir un tema a un libro
+
+Introducid el titulo del libro >> 
+Introducid el nombre del tema >> 
+Tema anadido
+
+Opciones:
+1) Consultar el nombre de biblioteca
+2) Modificar el nombre de biblioteca
+3) Consultar el numero total de libros
+4) Añadir un libro
+5) Añadir un tema
+6) Eliminar un libro
+7) Consultar un libro
+8) Modificar un libro
+9) Consultar si el catalogo es vacio
+0) exit
+>> 
+
+
