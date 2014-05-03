@@ -1,5 +1,7 @@
-import biblioteca_1.Tema;
+
+
 import java.util.ArrayList;
+import biblioteca_1.Tema;
 
 /**
  * La clase Libro gestiona toda la información relacionada con un libro, permite
@@ -68,6 +70,13 @@ public class Libro {
         this.temas = temas;
     }
     
+    public void anadirTema() {
+        
+    }
+    
+    public void eliminarTema() {
+        
+    }
     
 }
 
