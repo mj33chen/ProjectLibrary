@@ -1,3 +1,5 @@
+package Xavier_Navarro_Ciurana;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -39,7 +41,6 @@ public class DriverLibro {
         while(((r = br.readLine()) != null)){
             switch(Integer.parseInt(r)){
             case 1:
-                
                  System.out.print("El titulo del libro es:: " + l.getTitulo() + "\n");
         }
             
