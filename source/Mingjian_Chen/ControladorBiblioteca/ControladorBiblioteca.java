@@ -9,13 +9,11 @@ import java.io.IOException;
 public class ControladorBiblioteca
 {
 
-	private ControladorBiblioteca controlBiblio;
-
 	private Biblioteca biblio;
 
-	public ControladorBiblioteca(String nombre)
+	public ControladorBiblioteca(String nombre, Clasificacion clasi)
 	{
-		this.biblio = new Biblioteca(nombre);  
+		this.biblio = new Biblioteca(nombre, clasi);  
 	}
 
 	/**
@@ -56,6 +54,16 @@ public class ControladorBiblioteca
 	/**
 	*
 	*
+	*
+	*/
+	public double[][] GenerarMatriz()
+	{
+		return biblio.fluxMatrix();
+	}
+
+	/**
+	*
+	*
 	*/
 	public String consultarNombreBiblio()
 	{
@@ -66,16 +74,34 @@ public class ControladorBiblioteca
 	*
 	*
 	*/
-	public void modificarNombreBiblio(String nombre)
+	public void modificarNombreBiblio(String nombre) 
 	{
 		biblio.setNombre(nombre);
+	}
+	/**
+	*
+	*
+	*/
+	public String consultarNombreClasificacion()
+	{
+		return biblio.getClasificacion().getNombre();
 	}
 
 	/**
 	*
 	*
 	*/
-	public void modificarLibro(int id, String titulo, String autor)
+	public void setClasificacion(Clasificacion c)
+	{
+		biblio.setClasificacion(c);
+	}
+
+
+	/**
+	*
+	*
+	*/
+	public void modificarLibro(int id, String titulo, String autor) 
 	{
 		biblio.modificarLibro(id, titulo, autor);
 	}
@@ -97,18 +123,18 @@ public class ControladorBiblioteca
 	*
 	*
 	*/
-	public void anadirTemaLibro(String nombre, String tema) throws IOException
+	public void anadirTemaLibro(String nombre, String tema, int nivel, Tema padre) throws IOException
 	{
 		//Tema t = new Tema();
 		//t.setNombre(tema);
-		biblio.anadirTemaLibro(nombre, tema);
+		biblio.anadirTemaLibro(nombre, tema, nivel, padre);
 	}
 
 	/**
 	*
 	*
 	*/
-	public void eliminarLibro(int id)
+	public void eliminarLibro(int id) 
 	{
 		biblio.eliminarLibro(id);
 	}
