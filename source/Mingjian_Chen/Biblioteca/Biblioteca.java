@@ -10,23 +10,48 @@ import java.io.IOException;
 public class Biblioteca
 {
     private String nombre;
-    //private Clasificacion clasi_actual;
-	ArrayList<Libro> libros;
+    private Clasificacion clasi_actual;
+    private ArrayList<Libro> libros;
 
 
-	/**
+    /**
     * Crear una nueva biblioteca
     * @param nombre El nombre de la biblioteca creada
     * @return la clase Biblioteca 
     */
-    public Biblioteca(String nombre)
+    public Biblioteca(String nombre, Clasificacion clasi)
     {
-    	this.nombre = nombre;
-    	libros = new ArrayList<Libro>();
-        //clasi_actual = null;
+        this.nombre = nombre;
+        libros = new ArrayList<Libro>();
+        clasi_actual = clasi_actual;
     }
 
-    public void modificarLibro(int id, String titulo, String autor)
+
+
+    public double[][] fluxMatrix()
+    {
+        int size = libros.size();
+        double[][] flux = new double[size][size];
+        for(int i = 0; i < size; ++i)
+        {
+            for(int j = 0; j < size; ++j)
+            {
+                if(i != j)
+                {  
+                    Libro l1 = libros.get(i);
+                    Tema t1 = l1.temaMaxLVL();
+                    Libro l2 = libros.get(j);
+                    Tema t2 = l2.temaMaxLVL();
+                    flux[i][j] = t1.calcularSimilitud(t2);
+                }
+                else 
+                    flux[i][j] = 0.0;
+            }
+        }
+        return flux;
+    }
+
+    public void modificarLibro(int id, String titulo, String autor) 
     {
         for (Libro l : libros) {
             if (l.getId() == id) 
@@ -54,7 +79,7 @@ public class Biblioteca
     *
     *
     */
-    public void anadirTemaLibro(String nombre, String nombre_) throws IOException
+    public void anadirTemaLibro(String nombre, String nombre_, int nivel, Tema padre) throws IOException
     {
         Libro l = _getLibro(nombre);
         if(l != null)
@@ -62,6 +87,8 @@ public class Biblioteca
             if(l.noExistido(nombre_))
             {
                 Tema t = new Tema(nombre_);
+                t.setNivel(nivel);
+                t.setPadre(padre);
                 l.anadirTema(t);
             }
             else 
@@ -71,17 +98,17 @@ public class Biblioteca
             throw new IOException("Titulo incorrecto!");
     }
 
-	/**
+    /**
     *
     *
     *
     */
     public void eliminarLibro(int id)
     {
-       	int i = 0;        
+        int i = 0;        
         for (Libro l : libros) 
         {
-            if (l.getId() == id) 
+            if (id == l.getId()) 
             {
                 libros.remove(i);
                 break;
@@ -111,7 +138,7 @@ public class Biblioteca
     */
     public Libro getLibro(int id) 
     {
-    	for(Libro l : libros)
+        for(Libro l : libros)
         {
             if(l.getId() == id) return l;
         }
@@ -147,8 +174,23 @@ public class Biblioteca
         return libros.size();
     }
 
-    /*public Clasificacion getClasificacion()
+    /**
+    *
+    *
+    */
+    public ArrayList<Libro> getAllLibros()
+    {
+        return libros;
+    }
+
+    public Clasificacion getClasificacion()
     {
         return clasi_actual;
-    }*/
+    }
+
+    public void setClasificacion(Clasificacion c)
+    {
+        clasi_actual = c;
+    }
+
 }
