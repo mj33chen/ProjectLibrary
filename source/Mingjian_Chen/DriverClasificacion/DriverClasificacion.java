@@ -117,9 +117,9 @@ public class DriverClasificacion
 
 	private static void introduccion()
 	{
-		System.out.println("-----------------------");
-        System.out.println("| Driver de Posicion |");
-        System.out.println("-----------------------" + NEW_LINE);
+		System.out.println("--------------------------");
+        System.out.println("| Driver de Clasificacion |");
+        System.out.println("--------------------------" + NEW_LINE);
 	}
 
 	private static void menu()
