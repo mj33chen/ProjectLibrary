@@ -1,0 +1,109 @@
+-----------------------
+| Driver de Posicion |
+-----------------------
+
+Creamos una nueva clasificacion
+Pon un nombre de la clasificacion
+
+Opciones:
+1) Consultar el nombre de la clasificacion
+2) Modificar el nombre de la clasificacion
+3) Consultar el numero de temas en total
+4) Consultar la info. de tema
+5) Añadir tema
+6) Eliminar tema
+7) Modificar tema
+0) exit
+>> 
+
+Nombre de la clasificacion: Catalogo
+
+Opciones:
+1) Consultar el nombre de la clasificacion
+2) Modificar el nombre de la clasificacion
+3) Consultar el numero de temas en total
+4) Consultar la info. de tema
+5) Añadir tema
+6) Eliminar tema
+7) Modificar tema
+0) exit
+>> 
+
+Pon un nombre de la clasificacion >> 
+El nombre ha sido modificado.
+
+Opciones:
+1) Consultar el nombre de la clasificacion
+2) Modificar el nombre de la clasificacion
+3) Consultar el numero de temas en total
+4) Consultar la info. de tema
+5) Añadir tema
+6) Eliminar tema
+7) Modificar tema
+0) exit
+>> 
+
+Hay 1 en total.
+
+Opciones:
+1) Consultar el nombre de la clasificacion
+2) Modificar el nombre de la clasificacion
+3) Consultar el numero de temas en total
+4) Consultar la info. de tema
+5) Añadir tema
+6) Eliminar tema
+7) Modificar tema
+0) exit
+>> 
+
+Introduzca el nombre del tema >> 
+Nivel: 0
+Numº de hijos: 0
+Tema General
+Color: null
+
+Opciones:
+1) Consultar el nombre de la clasificacion
+2) Modificar el nombre de la clasificacion
+3) Consultar el numero de temas en total
+4) Consultar la info. de tema
+5) Añadir tema
+6) Eliminar tema
+7) Modificar tema
+0) exit
+>> 
+
+Introduzca un nombre del tema para añadir a la clasificacion >> 
+Introduzca un nombre del tema padre para asignar >> 
+Introduzca color >> 
+Tema añadido!
+
+Opciones:
+1) Consultar el nombre de la clasificacion
+2) Modificar el nombre de la clasificacion
+3) Consultar el numero de temas en total
+4) Consultar la info. de tema
+5) Añadir tema
+6) Eliminar tema
+7) Modificar tema
+0) exit
+>> 
+
+Introducid el nombre del tema para modificar >> 
+
+nombre >> 
+color >> 
+nombre tema padre >> 
+Tema modificado!
+
+Opciones:
+1) Consultar el nombre de la clasificacion
+2) Modificar el nombre de la clasificacion
+3) Consultar el numero de temas en total
+4) Consultar la info. de tema
+5) Añadir tema
+6) Eliminar tema
+7) Modificar tema
+0) exit
+>> 
+
