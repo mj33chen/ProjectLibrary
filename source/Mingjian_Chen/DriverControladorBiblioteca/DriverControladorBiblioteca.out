@@ -5,6 +5,8 @@ Creamos un controlador de biblioteca
 
 Nombre de biblioteca: 
 
+Pon un nombre de la clasificacion 
+
 Biblioteca creada con el nombre: BRGF
 
 Opciones:
@@ -16,7 +18,9 @@ Opciones:
 6) Consultar si el catalogo es vacio
 7) Modificar el nombre de biblioteca
 8) Consultar el nombre de biblioteca
-9) Anadir tema
+9) Consultar el nombre de la clasificacion actual
+10) Asignar una nueva clasificacion
+11) Anadir tema
 0) exit
 >> 
 
@@ -31,7 +35,26 @@ Opciones:
 6) Consultar si el catalogo es vacio
 7) Modificar el nombre de biblioteca
 8) Consultar el nombre de biblioteca
-9) Anadir tema
+9) Consultar el nombre de la clasificacion actual
+10) Asignar una nueva clasificacion
+11) Anadir tema
+0) exit
+>> 
+
+Nombre de la clasificacion: Catalogo
+
+Opciones:
+1) Consultar la info. de libro
+2) Consultar el catalogo de biblioteca
+3) Modificar un libro
+4) Añadir un libro
+5) Eliminar un libro
+6) Consultar si el catalogo es vacio
+7) Modificar el nombre de biblioteca
+8) Consultar el nombre de biblioteca
+9) Consultar el nombre de la clasificacion actual
+10) Asignar una nueva clasificacion
+11) Anadir tema
 0) exit
 >> 
 
@@ -50,7 +73,9 @@ Opciones:
 6) Consultar si el catalogo es vacio
 7) Modificar el nombre de biblioteca
 8) Consultar el nombre de biblioteca
-9) Anadir tema
+9) Consultar el nombre de la clasificacion actual
+10) Asignar una nueva clasificacion
+11) Anadir tema
 0) exit
 >> 
 
@@ -67,7 +92,9 @@ Opciones:
 6) Consultar si el catalogo es vacio
 7) Modificar el nombre de biblioteca
 8) Consultar el nombre de biblioteca
-9) Anadir tema
+9) Consultar el nombre de la clasificacion actual
+10) Asignar una nueva clasificacion
+11) Anadir tema
 0) exit
 >> 
 
@@ -84,7 +111,9 @@ Opciones:
 6) Consultar si el catalogo es vacio
 7) Modificar el nombre de biblioteca
 8) Consultar el nombre de biblioteca
-9) Anadir tema
+9) Consultar el nombre de la clasificacion actual
+10) Asignar una nueva clasificacion
+11) Anadir tema
 0) exit
 >> 
 
@@ -105,7 +134,9 @@ Opciones:
 6) Consultar si el catalogo es vacio
 7) Modificar el nombre de biblioteca
 8) Consultar el nombre de biblioteca
-9) Anadir tema
+9) Consultar el nombre de la clasificacion actual
+10) Asignar una nueva clasificacion
+11) Anadir tema
 0) exit
 >> 
 
@@ -124,7 +155,9 @@ Opciones:
 6) Consultar si el catalogo es vacio
 7) Modificar el nombre de biblioteca
 8) Consultar el nombre de biblioteca
-9) Anadir tema
+9) Consultar el nombre de la clasificacion actual
+10) Asignar una nueva clasificacion
+11) Anadir tema
 0) exit
 >> 
 
@@ -143,7 +176,9 @@ Opciones:
 6) Consultar si el catalogo es vacio
 7) Modificar el nombre de biblioteca
 8) Consultar el nombre de biblioteca
-9) Anadir tema
+9) Consultar el nombre de la clasificacion actual
+10) Asignar una nueva clasificacion
+11) Anadir tema
 0) exit
 >> 
 
@@ -168,13 +203,13 @@ Opciones:
 6) Consultar si el catalogo es vacio
 7) Modificar el nombre de biblioteca
 8) Consultar el nombre de biblioteca
-9) Anadir tema
+9) Consultar el nombre de la clasificacion actual
+10) Asignar una nueva clasificacion
+11) Anadir tema
 0) exit
 >> 
 
-Biblioteca NO vacia.
-
-Hay 2 libros en total
+Pon un nombre de la clasificacion >> 
 
 Opciones:
 1) Consultar la info. de libro
@@ -185,8 +220,57 @@ Opciones:
 6) Consultar si el catalogo es vacio
 7) Modificar el nombre de biblioteca
 8) Consultar el nombre de biblioteca
-9) Anadir tema
+9) Consultar el nombre de la clasificacion actual
+10) Asignar una nueva clasificacion
+11) Anadir tema
 0) exit
 >> 
 
+Introducid el identificador del libro para modificar >> 
+
+titulo >> 
+autor >> 
+Libro modificado >> 
+
+Opciones:
+1) Consultar la info. de libro
+2) Consultar el catalogo de biblioteca
+3) Modificar un libro
+4) Añadir un libro
+5) Eliminar un libro
+6) Consultar si el catalogo es vacio
+7) Modificar el nombre de biblioteca
+8) Consultar el nombre de biblioteca
+9) Consultar el nombre de la clasificacion actual
+10) Asignar una nueva clasificacion
+11) Anadir tema
+0) exit
+>> 
+
+Libro: 1
+Id: 12
+Titulo: Xarxa_Computadors
+Autor: Llorenc
+Num. temas: 1
+
+Libro: 2
+Id: 1234
+Titulo: Manual
+Autor: Ana
+Num. temas: 0
+
+Opciones:
+1) Consultar la info. de libro
+2) Consultar el catalogo de biblioteca
+3) Modificar un libro
+4) Añadir un libro
+5) Eliminar un libro
+6) Consultar si el catalogo es vacio
+7) Modificar el nombre de biblioteca
+8) Consultar el nombre de biblioteca
+9) Consultar el nombre de la clasificacion actual
+10) Asignar una nueva clasificacion
+11) Anadir tema
+0) exit
+>> 
 
