@@ -1,20 +1,25 @@
 -----------------------
 | Driver de Biblioteca |
 ------------------------
-Creamos una nueva biblioteca, pon un nombre para crear
+Creamos una nueva biblioteca, pon un nombre y nombre de clasificacion para crear
+
+Pon un nombre de la clasificacion 
 
 Biblioteca creada con el nombre: BRGF
 
 Opciones:
 1) Consultar el nombre de biblioteca
 2) Modificar el nombre de biblioteca
-3) Consultar el numero total de libros
-4) Añadir un libro
-5) Añadir un tema
-6) Eliminar un libro
-7) Consultar un libro
-8) Modificar un libro
-9) Consultar si el catalogo es vacio
+3) Consultar el nombre de la clasificacion actual
+4) Asignar una nueva clasificacion
+5) Consultar el numero total de libros
+6) Añadir un libro
+7) Añadir un tema
+8) Eliminar un libro
+9) Consultar un libro
+10) Modificar un libro
+11) Consultar si el catalogo es vacio
+12) Generar la matriz flujo
 0) exit
 >> 
 
@@ -23,30 +28,35 @@ Nombre de biblioteca: BRGF
 Opciones:
 1) Consultar el nombre de biblioteca
 2) Modificar el nombre de biblioteca
-3) Consultar el numero total de libros
-4) Añadir un libro
-5) Añadir un tema
-6) Eliminar un libro
-7) Consultar un libro
-8) Modificar un libro
-9) Consultar si el catalogo es vacio
+3) Consultar el nombre de la clasificacion actual
+4) Asignar una nueva clasificacion
+5) Consultar el numero total de libros
+6) Añadir un libro
+7) Añadir un tema
+8) Eliminar un libro
+9) Consultar un libro
+10) Modificar un libro
+11) Consultar si el catalogo es vacio
+12) Generar la matriz flujo
 0) exit
 >> 
 
-Introducid un nombre de la biblioteca
-
+Introducid un nombre de la biblioteca >> 
 Se ha modificado el nombre de la biblioteca
 
 Opciones:
 1) Consultar el nombre de biblioteca
 2) Modificar el nombre de biblioteca
-3) Consultar el numero total de libros
-4) Añadir un libro
-5) Añadir un tema
-6) Eliminar un libro
-7) Consultar un libro
-8) Modificar un libro
-9) Consultar si el catalogo es vacio
+3) Consultar el nombre de la clasificacion actual
+4) Asignar una nueva clasificacion
+5) Consultar el numero total de libros
+6) Añadir un libro
+7) Añadir un tema
+8) Eliminar un libro
+9) Consultar un libro
+10) Modificar un libro
+11) Consultar si el catalogo es vacio
+12) Generar la matriz flujo
 0) exit
 >> 
 
@@ -55,13 +65,52 @@ Biblioteca vacia.
 Opciones:
 1) Consultar el nombre de biblioteca
 2) Modificar el nombre de biblioteca
-3) Consultar el numero total de libros
-4) Añadir un libro
-5) Añadir un tema
-6) Eliminar un libro
-7) Consultar un libro
-8) Modificar un libro
-9) Consultar si el catalogo es vacio
+3) Consultar el nombre de la clasificacion actual
+4) Asignar una nueva clasificacion
+5) Consultar el numero total de libros
+6) Añadir un libro
+7) Añadir un tema
+8) Eliminar un libro
+9) Consultar un libro
+10) Modificar un libro
+11) Consultar si el catalogo es vacio
+12) Generar la matriz flujo
+0) exit
+>> 
+
+Nombre de la clasificacion: Catalogo
+
+Opciones:
+1) Consultar el nombre de biblioteca
+2) Modificar el nombre de biblioteca
+3) Consultar el nombre de la clasificacion actual
+4) Asignar una nueva clasificacion
+5) Consultar el numero total de libros
+6) Añadir un libro
+7) Añadir un tema
+8) Eliminar un libro
+9) Consultar un libro
+10) Modificar un libro
+11) Consultar si el catalogo es vacio
+12) Generar la matriz flujo
+0) exit
+>> 
+
+Pon un nombre de la clasificacion >> 
+
+Opciones:
+1) Consultar el nombre de biblioteca
+2) Modificar el nombre de biblioteca
+3) Consultar el nombre de la clasificacion actual
+4) Asignar una nueva clasificacion
+5) Consultar el numero total de libros
+6) Añadir un libro
+7) Añadir un tema
+8) Eliminar un libro
+9) Consultar un libro
+10) Modificar un libro
+11) Consultar si el catalogo es vacio
+12) Generar la matriz flujo
 0) exit
 >> 
 
@@ -74,13 +123,16 @@ Libro anadido
 Opciones:
 1) Consultar el nombre de biblioteca
 2) Modificar el nombre de biblioteca
-3) Consultar el numero total de libros
-4) Añadir un libro
-5) Añadir un tema
-6) Eliminar un libro
-7) Consultar un libro
-8) Modificar un libro
-9) Consultar si el catalogo es vacio
+3) Consultar el nombre de la clasificacion actual
+4) Asignar una nueva clasificacion
+5) Consultar el numero total de libros
+6) Añadir un libro
+7) Añadir un tema
+8) Eliminar un libro
+9) Consultar un libro
+10) Modificar un libro
+11) Consultar si el catalogo es vacio
+12) Generar la matriz flujo
 0) exit
 >> 
 
@@ -96,13 +148,16 @@ Libro sin tema
 Opciones:
 1) Consultar el nombre de biblioteca
 2) Modificar el nombre de biblioteca
-3) Consultar el numero total de libros
-4) Añadir un libro
-5) Añadir un tema
-6) Eliminar un libro
-7) Consultar un libro
-8) Modificar un libro
-9) Consultar si el catalogo es vacio
+3) Consultar el nombre de la clasificacion actual
+4) Asignar una nueva clasificacion
+5) Consultar el numero total de libros
+6) Añadir un libro
+7) Añadir un tema
+8) Eliminar un libro
+9) Consultar un libro
+10) Modificar un libro
+11) Consultar si el catalogo es vacio
+12) Generar la matriz flujo
 0) exit
 >> 
 
@@ -115,29 +170,16 @@ Libro anadido
 Opciones:
 1) Consultar el nombre de biblioteca
 2) Modificar el nombre de biblioteca
-3) Consultar el numero total de libros
-4) Añadir un libro
-5) Añadir un tema
-6) Eliminar un libro
-7) Consultar un libro
-8) Modificar un libro
-9) Consultar si el catalogo es vacio
-0) exit
->> 
-
-Introducid el identificador para eliminar el libro >> 
-
-Libro eliminado
-Opciones:
-1) Consultar el nombre de biblioteca
-2) Modificar el nombre de biblioteca
-3) Consultar el numero total de libros
-4) Añadir un libro
-5) Añadir un tema
-6) Eliminar un libro
-7) Consultar un libro
-8) Modificar un libro
-9) Consultar si el catalogo es vacio
+3) Consultar el nombre de la clasificacion actual
+4) Asignar una nueva clasificacion
+5) Consultar el numero total de libros
+6) Añadir un libro
+7) Añadir un tema
+8) Eliminar un libro
+9) Consultar un libro
+10) Modificar un libro
+11) Consultar si el catalogo es vacio
+12) Generar la matriz flujo
 0) exit
 >> 
 
@@ -150,33 +192,74 @@ Libro modificado >>
 Opciones:
 1) Consultar el nombre de biblioteca
 2) Modificar el nombre de biblioteca
-3) Consultar el numero total de libros
-4) Añadir un libro
-5) Añadir un tema
-6) Eliminar un libro
-7) Consultar un libro
-8) Modificar un libro
-9) Consultar si el catalogo es vacio
+3) Consultar el nombre de la clasificacion actual
+4) Asignar una nueva clasificacion
+5) Consultar el numero total de libros
+6) Añadir un libro
+7) Añadir un tema
+8) Eliminar un libro
+9) Consultar un libro
+10) Modificar un libro
+11) Consultar si el catalogo es vacio
+12) Generar la matriz flujo
 0) exit
 >> 
 
-Anadir un tema a un libro
+Introducid el identificador para eliminar el libro >> 
 
-Introducid el titulo del libro >> 
-Introducid el nombre del tema >> 
-Tema anadido
+Libro eliminado
+Opciones:
+1) Consultar el nombre de biblioteca
+2) Modificar el nombre de biblioteca
+3) Consultar el nombre de la clasificacion actual
+4) Asignar una nueva clasificacion
+5) Consultar el numero total de libros
+6) Añadir un libro
+7) Añadir un tema
+8) Eliminar un libro
+9) Consultar un libro
+10) Modificar un libro
+11) Consultar si el catalogo es vacio
+12) Generar la matriz flujo
+0) exit
+>> 
+
+Biblioteca NO vacia.
 
 Opciones:
 1) Consultar el nombre de biblioteca
 2) Modificar el nombre de biblioteca
-3) Consultar el numero total de libros
-4) Añadir un libro
-5) Añadir un tema
-6) Eliminar un libro
-7) Consultar un libro
-8) Modificar un libro
-9) Consultar si el catalogo es vacio
+3) Consultar el nombre de la clasificacion actual
+4) Asignar una nueva clasificacion
+5) Consultar el numero total de libros
+6) Añadir un libro
+7) Añadir un tema
+8) Eliminar un libro
+9) Consultar un libro
+10) Modificar un libro
+11) Consultar si el catalogo es vacio
+12) Generar la matriz flujo
 0) exit
 >> 
 
+Numero total de libros: 1
 
+Opciones:
+1) Consultar el nombre de biblioteca
+2) Modificar el nombre de biblioteca
+3) Consultar el nombre de la clasificacion actual
+4) Asignar una nueva clasificacion
+5) Consultar el numero total de libros
+6) Añadir un libro
+7) Añadir un tema
+8) Eliminar un libro
+9) Consultar un libro
+10) Modificar un libro
+11) Consultar si el catalogo es vacio
+12) Generar la matriz flujo
+0) exit
+>> 
+
+La matriz de flujo: 
+
+0,00 
