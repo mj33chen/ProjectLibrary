@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package biblioteca_1;
 
 import java.util.ArrayList;
@@ -24,8 +18,14 @@ public class Cjt_posicion {
         this.posiciones = new ArrayList<Posicion>();
     }
     
+    public Cjt_posicion(Integer n) {
+        this.posiciones = new ArrayList<Posicion>();
+        for(int i = 0; i < n; i++)
+            this.posiciones.add(new Posicion(0,0));
+    }
+    
     public Posicion getPosicion(Integer index) {
-        return posiciones.get(index);
+        return this.posiciones.get(index);
     }
     
     public Integer size() {
@@ -39,18 +39,23 @@ public class Cjt_posicion {
     
     //No decidido
     public void eliminarPosicion(Integer index) {
-        this.posiciones.remove(index);
+        this.posiciones.remove((int)index);
     }
     
-    public Integer[][] generarMatrizFlujo() {
+    public double[][] generarMatrizDistancias() {
         Integer tam = this.size();
-        Integer[][] matf = new Integer[tam][tam];
+        double[][] matf = new double[tam][tam];
         for(int i = 0; i < tam; ++i) matf[i][i] = 0;
         for(int i = 0; i < tam; ++i){
             for(int j = i + 1; j < tam; ++j){
                     Posicion pos1 = this.getPosicion(i);
                     Posicion pos2 = this.getPosicion(j);
-                    matf[i][j] = matf[j][i] = sqrt(pow(pos1.getX() - pos2.getX(),2) + pow(pos1.getY() - pos2.getY()),2);
+                    double x2,y2,sq;
+                    x2 = Math.pow(pos1.getPosX() - pos2.getPosX(),2);
+                    y2 = Math.pow(pos1.getPosY() - pos2.getPosY(),2);
+                    sq = Math.sqrt(x2 + y2);
+                    matf[j][i] = sq;
+                    matf[i][j] = matf[j][i];
             }
         }
         return matf;
