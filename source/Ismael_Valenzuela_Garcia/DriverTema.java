@@ -52,10 +52,18 @@ public class DriverTema {
                 case 3:
                     System.out.println("Creamos una nuevo tema con 2 hijos" + NEW_LINE);
                     Tema padre = new Tema("Padre");
-                    ArrayList<Tema> hijos = new ArrayList<Tema>();
-                    hijos.add(new Tema("Hijo1"));
-                    hijos.add(new Tema("Hijo2"));
-                    t = new Tema(padre,"Tema1",hijos);
+                    t = new Tema("Tema1");
+                    t.setPadre(padre);
+                    t.setNombrePadre("Padre");
+                    padre.addHijo(t);
+                    Tema hijo1 = new Tema("Hijo1");
+                    Tema hijo2 = new Tema("Hijo2");
+                    hijo1.setPadre(t);
+                    hijo2.setPadre(t);
+                    hijo1.setNombrePadre("Tema1");
+                    hijo2.setNombrePadre("Tema1");
+                    t.addHijo(hijo1);
+                    t.addHijo(hijo2);
                     break;
                 case 4:
                     System.out.println("Informacion sobre el tema");
