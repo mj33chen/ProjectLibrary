@@ -114,6 +114,7 @@ public class Tema
     {
         if(t != null)
         {
+            //falta hacer enlace con padre
             hijo.add(t);
             ++totalNodos;
         }
