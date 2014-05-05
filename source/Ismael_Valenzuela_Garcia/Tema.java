@@ -107,6 +107,7 @@ public class Tema
 
     public void setPadre(Tema padre)
     {
+        //mirar si hacer addhijo al nodo padre
         this.padre = padre;
     }
 
