@@ -1,0 +1,163 @@
+-----------------------
+| Driver de Libro     |
+-----------------------
+
+Opciones:
+1) Crear un nuevo libro
+2) Consultar la informacion de libro
+3) Modificar el autor
+4) Modificar el titulo
+5) Modificar el identificador
+6) Añadir el tema
+7) Eliminar el tema
+8) Libro vacio ? 
+0) exit
+>> 
+
+Creamos un  libro 
+
+Identificador >>
+Titulo >>
+Autor >>
+Libro creado
+
+Opciones:
+1) Crear un nuevo libro
+2) Consultar la informacion de libro
+3) Modificar el autor
+4) Modificar el titulo
+5) Modificar el identificador
+6) Añadir el tema
+7) Eliminar el tema
+8) Libro vacio ? 
+0) exit
+>> 
+
+Informacion del libro: 
+
+identificador: 123
+titulo: Intro
+autor: Ana
+Libro sin tema
+
+Opciones:
+1) Crear un nuevo libro
+2) Consultar la informacion de libro
+3) Modificar el autor
+4) Modificar el titulo
+5) Modificar el identificador
+6) Añadir el tema
+7) Eliminar el tema
+8) Libro vacio ? 
+0) exit
+>> 
+
+Libro vacio
+
+Opciones:
+1) Crear un nuevo libro
+2) Consultar la informacion de libro
+3) Modificar el autor
+4) Modificar el titulo
+5) Modificar el identificador
+6) Añadir el tema
+7) Eliminar el tema
+8) Libro vacio ? 
+0) exit
+>> 
+
+Anadir un tema a un libro
+
+Introducid el nombre del tema >> 
+Tema anadido
+
+Opciones:
+1) Crear un nuevo libro
+2) Consultar la informacion de libro
+3) Modificar el autor
+4) Modificar el titulo
+5) Modificar el identificador
+6) Añadir el tema
+7) Eliminar el tema
+8) Libro vacio ? 
+0) exit
+>> 
+
+Hay 1 tema(s)
+
+Opciones:
+1) Crear un nuevo libro
+2) Consultar la informacion de libro
+3) Modificar el autor
+4) Modificar el titulo
+5) Modificar el identificador
+6) Añadir el tema
+7) Eliminar el tema
+8) Libro vacio ? 
+0) exit
+>> 
+
+Introducid el nuevo identificador >> 
+
+Identificador modificado
+
+Opciones:
+1) Crear un nuevo libro
+2) Consultar la informacion de libro
+3) Modificar el autor
+4) Modificar el titulo
+5) Modificar el identificador
+6) Añadir el tema
+7) Eliminar el tema
+8) Libro vacio ? 
+0) exit
+>> 
+
+Informacion del libro: 
+
+identificador: 12345
+titulo: Intro
+autor: Ana
+Opciones:
+1) Crear un nuevo libro
+2) Consultar la informacion de libro
+3) Modificar el autor
+4) Modificar el titulo
+5) Modificar el identificador
+6) Añadir el tema
+7) Eliminar el tema
+8) Libro vacio ? 
+0) exit
+>> 
+
+Eliminar un tema a un libro
+
+Introducid el nombre del tema >> 
+Tema eliminado
+
+Opciones:
+1) Crear un nuevo libro
+2) Consultar la informacion de libro
+3) Modificar el autor
+4) Modificar el titulo
+5) Modificar el identificador
+6) Añadir el tema
+7) Eliminar el tema
+8) Libro vacio ? 
+0) exit
+>> 
+
+Libro vacio
+
+Opciones:
+1) Crear un nuevo libro
+2) Consultar la informacion de libro
+3) Modificar el autor
+4) Modificar el titulo
+5) Modificar el identificador
+6) Añadir el tema
+7) Eliminar el tema
+8) Libro vacio ? 
+0) exit
+>> 
+
