@@ -1,0 +1,213 @@
+-------------------------------------
+| Driver de Controlador Clasificacion |
+--------------------------------------
+Creamos un controlador de clasificacion
+
+Nombre de clasificacion: >> 
+Clasificacion creada con el nombre: Catalogo
+
+Opciones:
+1) Consultar la info. de tema
+2) Consultar la clasificacion
+3) Modificar un tema
+4) Añadir un tema
+5) Eliminar un tema
+6) Modificar el nombre de clasificacion
+7) Consultar el nombre de clasificacion
+0) exit
+>> 
+
+Crear un tema
+Nombre >>
+Color >>
+nombre de tema padre >> 
+Tema anadido
+
+Opciones:
+1) Consultar la info. de tema
+2) Consultar la clasificacion
+3) Modificar un tema
+4) Añadir un tema
+5) Eliminar un tema
+6) Modificar el nombre de clasificacion
+7) Consultar el nombre de clasificacion
+0) exit
+>> 
+
+Tema: 1
+nombre: General
+color: null
+nombre de tema padre: null
+nivel: 0
+
+Tema: 2
+nombre: Mates
+color: white
+nombre de tema padre: General
+nivel: 1
+
+Opciones:
+1) Consultar la info. de tema
+2) Consultar la clasificacion
+3) Modificar un tema
+4) Añadir un tema
+5) Eliminar un tema
+6) Modificar el nombre de clasificacion
+7) Consultar el nombre de clasificacion
+0) exit
+>> 
+
+Introducid un nombre de tema para modificar >> 
+nombre nuevo >> 
+color >> 
+nombre de tema padre >> 
+Tema modificado.
+
+Opciones:
+1) Consultar la info. de tema
+2) Consultar la clasificacion
+3) Modificar un tema
+4) Añadir un tema
+5) Eliminar un tema
+6) Modificar el nombre de clasificacion
+7) Consultar el nombre de clasificacion
+0) exit
+>> 
+
+Introducid el nombre del tema >> 
+Informacion del libro: 
+
+nombre: Mates1
+color: blue
+nombre de tema padre: General
+nivel: 1
+Opciones:
+1) Consultar la info. de tema
+2) Consultar la clasificacion
+3) Modificar un tema
+4) Añadir un tema
+5) Eliminar un tema
+6) Modificar el nombre de clasificacion
+7) Consultar el nombre de clasificacion
+0) exit
+>> 
+
+Tema: 1
+nombre: General
+color: null
+nombre de tema padre: null
+nivel: 0
+
+Tema: 2
+nombre: Mates1
+color: blue
+nombre de tema padre: General
+nivel: 1
+
+Opciones:
+1) Consultar la info. de tema
+2) Consultar la clasificacion
+3) Modificar un tema
+4) Añadir un tema
+5) Eliminar un tema
+6) Modificar el nombre de clasificacion
+7) Consultar el nombre de clasificacion
+0) exit
+>> 
+
+Introducid un nombre de tema para modificar >> 
+color >> 
+Tema modificado.
+
+Opciones:
+1) Consultar la info. de tema
+2) Consultar la clasificacion
+3) Modificar un tema
+4) Añadir un tema
+5) Eliminar un tema
+6) Modificar el nombre de clasificacion
+7) Consultar el nombre de clasificacion
+0) exit
+>> 
+
+Tema: 1
+nombre: General
+color: Red
+nombre de tema padre: null
+nivel: 0
+
+Tema: 2
+nombre: Mates1
+color: blue
+nombre de tema padre: General
+nivel: 1
+
+Opciones:
+1) Consultar la info. de tema
+2) Consultar la clasificacion
+3) Modificar un tema
+4) Añadir un tema
+5) Eliminar un tema
+6) Modificar el nombre de clasificacion
+7) Consultar el nombre de clasificacion
+0) exit
+>> 
+
+Introducid un nombre para eliminar el tema >> 
+Tema eliminado
+
+Opciones:
+1) Consultar la info. de tema
+2) Consultar la clasificacion
+3) Modificar un tema
+4) Añadir un tema
+5) Eliminar un tema
+6) Modificar el nombre de clasificacion
+7) Consultar el nombre de clasificacion
+0) exit
+>> 
+
+Tema: 1
+nombre: General
+color: Red
+nombre de tema padre: null
+nivel: 0
+
+Opciones:
+1) Consultar la info. de tema
+2) Consultar la clasificacion
+3) Modificar un tema
+4) Añadir un tema
+5) Eliminar un tema
+6) Modificar el nombre de clasificacion
+7) Consultar el nombre de clasificacion
+0) exit
+>> 
+
+Introducid un nombre de la Clasificacion
+Se ha modificado el nombre de la clasificacion
+
+Opciones:
+1) Consultar la info. de tema
+2) Consultar la clasificacion
+3) Modificar un tema
+4) Añadir un tema
+5) Eliminar un tema
+6) Modificar el nombre de clasificacion
+7) Consultar el nombre de clasificacion
+0) exit
+>> 
+
+nombre de la biblioteca: Cataleg
+
+Opciones:
+1) Consultar la info. de tema
+2) Consultar la clasificacion
+3) Modificar un tema
+4) Añadir un tema
+5) Eliminar un tema
+6) Modificar el nombre de clasificacion
+7) Consultar el nombre de clasificacion
+0) exit
+>> 
+
