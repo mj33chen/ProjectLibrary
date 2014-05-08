@@ -18,7 +18,7 @@ public class Tema
 
     private int nivel;
 
-    private static int totalNodos = 0;
+    private int totalNodos = 0;
 
     private String color;
 
@@ -107,37 +107,40 @@ public class Tema
 
     public void setPadre(Tema padre)
     {
-        //mirar si hacer addhijo al nodo padre
         this.padre = padre;
     }
 
-    public void addHijo(Tema t) throws IOException
+    public void sumaNodoHijo()
     {
-        if(t != null)
-        {
-            //falta hacer enlace con padre
-            hijo.add(t);
-            ++totalNodos;
-        }
-        else 
-            throw new IOException("No se puede anadir el tema!");
+        ++totalNodos;
     }
 
-    public void deleteHijo(Tema t) throws IOException
+    public void restaNodoHijo()
     {
-        if(t != null)
-        {
-            if(t.totalNodos != 0)
-            {
-                hijo.remove(t);
-                --totalNodos;
-            }
-            else 
-                throw new IOException("No tiene ningun nodo hijo");
-        }
-        else
-            throw new IOException("No se puede eliminar el tema!");
+        --totalNodos;
+    }
 
+    public void addHijo(Tema t)
+    {
+        Tema help = new Tema();
+        help = t;
+        hijo.add(help);
+        
+        //System.out.println("numero total de hijos es " + totalNodos);
+    }
+
+    public void deleteHijo(String nombre) 
+    {
+        int i = 0;        
+        for (Tema t : hijo) 
+        {
+            if (t.getNombre().equals(nombre)) 
+            {
+                hijo.remove(i);            
+                break;
+            }
+            ++i;
+        }
     }
 
     public boolean esHermano(Tema t)
@@ -186,8 +189,14 @@ public class Tema
         return ((double)(aux.getNivel() - 1));
     }
 
-    
-
+    public String toString()
+    {
+        String s = "Sub-temas: ";
+        for(Tema t : hijo)
+            s += t.getNombre() + " ";
+        s += "\n";
+        return s;
+    }
     
 }
 
