@@ -16,7 +16,7 @@ public class DriverControladorClasificacion
         BufferedReader buffer = new BufferedReader (iostream);
 		System.out.println("Creamos un controlador de clasificacion" + NEW_LINE);
         
-		System.out.println("Nombre de clasificacion: " + NEW_LINE);
+		System.out.println("Nombre de clasificacion: >> ");
 		String nombre = (buffer.readLine());
 		ControladorClasificacion controlClasifi = new ControladorClasificacion(nombre);
 		System.out.println("Clasificacion creada con el nombre: " + controlClasifi.consultarNombreClasificacion() + NEW_LINE);
@@ -35,7 +35,7 @@ public class DriverControladorClasificacion
 			switch(opcion)
 			{
 				case 1: 
-					System.out.println("Introducid el nombre del tema >> " + NEW_LINE);
+					System.out.println("Introducid el nombre del tema >> ");
 					nombre = (buffer.readLine());
 
 					String[] lista = controlClasifi.infoTema(nombre);
@@ -56,26 +56,37 @@ public class DriverControladorClasificacion
                         System.out.println("nombre: " + v[0]);
                         System.out.println("color: " + v[1]);
                         System.out.println("nombre de tema padre: " + v[2]);
-                        System.out.println("nivel " + v[3] + "\n");
+                        System.out.println("nivel: " + v[3] + "\n");
 					}
 
 					break;
 
 				case 3:
-					System.out.println("Introducid un nombre de tema para modificar >> " + NEW_LINE);
+					System.out.println("Introducid un nombre de tema para modificar >> ");
 					nombre = (buffer.readLine());
+					tema = controlClasifi.getTema(nombre);
 
-					System.out.println("nombre >> ");
-					nombre  = (buffer.readLine());
+					if(nombre.equals("General")) 
+                    {
+                        System.out.println("color >> ");
+                        color = buffer.readLine();
+                        tema.setColor(color);
+                    }
+                    else 
+                    {
+						System.out.println("nombre nuevo >> ");
+						String nombre_nuevo  = (buffer.readLine());
 
-					System.out.println("color >> ");
-                    color = (buffer.readLine());
+						System.out.println("color >> ");
+	                    color = (buffer.readLine());
 
-                    System.out.println("nombre de tema padre >> ");
-					nombre_padre = (buffer.readLine());
+	                    System.out.println("nombre de tema padre >> ");
+						nombre_padre = (buffer.readLine());
 
-                    controlClasifi.modificarTema(nombre, color, nombre_padre);
-                    System.out.println("Tema modificado >> " + NEW_LINE);
+	                    controlClasifi.modificarTema(nombre, nombre_nuevo, color, nombre_padre);
+	                }
+
+                    System.out.println("Tema modificado." + NEW_LINE);
                     break;
 
 				case 4:
@@ -96,14 +107,14 @@ public class DriverControladorClasificacion
 					break;
 
 				case 5:
-					System.out.println("Introducid un nombre para eliminar el libro >> " + NEW_LINE);
+					System.out.println("Introducid un nombre para eliminar el libro >> ");
 					nombre  = (buffer.readLine());
 					controlClasifi.eliminarTema(nombre);
 					System.out.println("Libro eliminado" + NEW_LINE);
 					break;
 
 				case 6: 
-					System.out.println("Introducid un nombre de la Clasificacion" + NEW_LINE);
+					System.out.println("Introducid un nombre de la Clasificacion");
 					controlClasifi.modificarNombreClasifi(buffer.readLine());
 					System.out.println("Se ha modificado el nombre de la clasificacion" + NEW_LINE);
 					break;
@@ -138,7 +149,7 @@ public class DriverControladorClasificacion
         System.out.println("2) Consultar la clasificacion");
         System.out.println("3) Modificar un tema"); 
         System.out.println("4) Añadir un tema");
-        System.out.println("5) Eliminar un tem");       
+        System.out.println("5) Eliminar un tema");       
         System.out.println("6) Modificar el nombre de clasificacion");
         System.out.println("7) Consultar el nombre de clasificacion");
         System.out.println("0) exit");
