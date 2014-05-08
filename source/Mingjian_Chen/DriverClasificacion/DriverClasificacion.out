@@ -1,10 +1,10 @@
------------------------
-| Driver de Posicion |
------------------------
+--------------------------
+| Driver de Clasificacion |
+--------------------------
 
 Creamos una nueva clasificacion
-Pon un nombre de la clasificacion
 
+Pon un nombre de la clasificacion >> 
 Opciones:
 1) Consultar el nombre de la clasificacion
 2) Modificar el nombre de la clasificacion
@@ -43,7 +43,7 @@ Opciones:
 0) exit
 >> 
 
-Hay 1 en total.
+Nombre de la clasificacion: Cataleg
 
 Opciones:
 1) Consultar el nombre de la clasificacion
@@ -59,6 +59,8 @@ Opciones:
 Introduzca el nombre del tema >> 
 Nivel: 0
 Numº de hijos: 0
+Sub-temas: 
+
 Tema General
 Color: null
 
@@ -89,12 +91,181 @@ Opciones:
 0) exit
 >> 
 
-Introducid el nombre del tema para modificar >> 
+Introduzca el nombre del tema >> 
+Nivel: 0
+Numº de hijos: 1
+Sub-temas: Mates 
 
-nombre >> 
+Tema General
+Color: null
+
+Opciones:
+1) Consultar el nombre de la clasificacion
+2) Modificar el nombre de la clasificacion
+3) Consultar el numero de temas en total
+4) Consultar la info. de tema
+5) Añadir tema
+6) Eliminar tema
+7) Modificar tema
+0) exit
+>> 
+
+Introduzca el nombre del tema >> 
+Nivel: 1
+Numº de hijos: 0
+Sub-temas: 
+
+Nombre de tema padre: General
+Color: Red
+
+Opciones:
+1) Consultar el nombre de la clasificacion
+2) Modificar el nombre de la clasificacion
+3) Consultar el numero de temas en total
+4) Consultar la info. de tema
+5) Añadir tema
+6) Eliminar tema
+7) Modificar tema
+0) exit
+>> 
+
+Introduzca un nombre del tema para añadir a la clasificacion >> 
+Introduzca un nombre del tema padre para asignar >> 
+Introduzca color >> 
+Tema añadido!
+
+Opciones:
+1) Consultar el nombre de la clasificacion
+2) Modificar el nombre de la clasificacion
+3) Consultar el numero de temas en total
+4) Consultar la info. de tema
+5) Añadir tema
+6) Eliminar tema
+7) Modificar tema
+0) exit
+>> 
+
+Introduzca un nombre del tema para añadir a la clasificacion >> 
+Introduzca un nombre del tema padre para asignar >> 
+Introduzca color >> 
+Tema añadido!
+
+Opciones:
+1) Consultar el nombre de la clasificacion
+2) Modificar el nombre de la clasificacion
+3) Consultar el numero de temas en total
+4) Consultar la info. de tema
+5) Añadir tema
+6) Eliminar tema
+7) Modificar tema
+0) exit
+>> 
+
+Introduzca un nombre del tema para añadir a la clasificacion >> 
+Introduzca un nombre del tema padre para asignar >> 
+Introduzca color >> 
+Tema añadido!
+
+Opciones:
+1) Consultar el nombre de la clasificacion
+2) Modificar el nombre de la clasificacion
+3) Consultar el numero de temas en total
+4) Consultar la info. de tema
+5) Añadir tema
+6) Eliminar tema
+7) Modificar tema
+0) exit
+>> 
+
+Introduzca el nombre del tema >> 
+Nivel: 1
+Numº de hijos: 2
+Sub-temas: Mates1 Mates2 
+
+Nombre de tema padre: General
+Color: Red
+
+Opciones:
+1) Consultar el nombre de la clasificacion
+2) Modificar el nombre de la clasificacion
+3) Consultar el numero de temas en total
+4) Consultar la info. de tema
+5) Añadir tema
+6) Eliminar tema
+7) Modificar tema
+0) exit
+>> 
+
+Introducid el nombre del tema para modificar >> 
+nombre nuevo >> 
 color >> 
-nombre tema padre >> 
+nombre del tema padre >> 
 Tema modificado!
+
+Opciones:
+1) Consultar el nombre de la clasificacion
+2) Modificar el nombre de la clasificacion
+3) Consultar el numero de temas en total
+4) Consultar la info. de tema
+5) Añadir tema
+6) Eliminar tema
+7) Modificar tema
+0) exit
+>> 
+
+Introduzca el nombre del tema >> 
+Nivel: 1
+Numº de hijos: 0
+Sub-temas: 
+
+Nombre de tema padre: General
+Color: Green
+
+Opciones:
+1) Consultar el nombre de la clasificacion
+2) Modificar el nombre de la clasificacion
+3) Consultar el numero de temas en total
+4) Consultar la info. de tema
+5) Añadir tema
+6) Eliminar tema
+7) Modificar tema
+0) exit
+>> 
+
+Introduzca un nombre del tema para eliminar desde la clasificacion >> 
+Tema(s) eliminado(s)!
+
+Opciones:
+1) Consultar el nombre de la clasificacion
+2) Modificar el nombre de la clasificacion
+3) Consultar el numero de temas en total
+4) Consultar la info. de tema
+5) Añadir tema
+6) Eliminar tema
+7) Modificar tema
+0) exit
+>> 
+
+Introduzca el nombre del tema >> 
+Nivel: 0
+Numº de hijos: 1
+Sub-temas: Biologia 
+
+Tema General
+Color: null
+
+Opciones:
+1) Consultar el nombre de la clasificacion
+2) Modificar el nombre de la clasificacion
+3) Consultar el numero de temas en total
+4) Consultar la info. de tema
+5) Añadir tema
+6) Eliminar tema
+7) Modificar tema
+0) exit
+>> 
+
+Hay 2 en total.
 
 Opciones:
 1) Consultar el nombre de la clasificacion
