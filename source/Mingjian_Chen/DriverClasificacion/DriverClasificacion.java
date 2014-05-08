@@ -23,6 +23,7 @@ public class DriverClasificacion
         System.out.println("Creamos una nueva clasificacion");
         System.out.println("Pon un nombre de la clasificacion" + NEW_LINE);
         String nombre = (buffer.readLine());
+        String color;
         Clasificacion clasifi = new Clasificacion(nombre);
         Tema tema = new Tema();
         Tema tema_padre = new Tema();
@@ -56,6 +57,8 @@ public class DriverClasificacion
 
                     System.out.println("Nivel: " + tema.getNivel());
                     System.out.println("Numº de hijos: " + tema.getNumHijo());
+                    System.out.println(tema.toString());
+
                     if(tema.getNombre().equals("General"))
                         System.out.println("Tema General");
                     else 
@@ -87,19 +90,29 @@ public class DriverClasificacion
                     break;
 
                 case 7:
-                    System.out.println("Introducid el nombre del tema para modificar >> " + NEW_LINE);
+                    System.out.println("Introducid el nombre del tema para modificar >> ");
                     nombre = buffer.readLine();
+                    tema = clasifi.getTema(nombre);
 
-                    System.out.println("nombre >> ");
-                    nombre = (buffer.readLine());
+                    if(nombre.equals("General"))
+                    {
+                        System.out.println("color >> ");
+                        color = buffer.readLine();
+                        tema.setColor(color);
+                    }
+                    else 
+                    {
+                        System.out.println("nombre nuevo >> ");
+                        String nombre_nuevo = (buffer.readLine());
 
-                    System.out.println("color >> ");
-                    String color = buffer.readLine();
+                        System.out.println("color >> ");
+                        color = buffer.readLine();
 
-                    System.out.println("nombre tema padre >> ");
-                    nombre_padre = buffer.readLine();
+                        System.out.println("nombre del tema padre >> ");
+                        nombre_padre = buffer.readLine();
 
-                    clasifi.modificarTema(nombre, color, nombre_padre);
+                        clasifi.modificarTema(nombre, nombre_nuevo, color, nombre_padre);
+                    }
 
                     System.out.println("Tema modificado!"  + NEW_LINE);
                     break;
