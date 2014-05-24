@@ -10,15 +10,15 @@ public class Tema
 
     private String nombre;
 
-    private String nombre_padre;
+    //private String nombre_padre;
 
     private Tema padre;
 
-    private ArrayList<Tema> hijo;
+    //private ArrayList<Tema> hijo;
 
-    private int nivel;
+    //private int nivel;
 
-    private int totalNodos = 0;
+    //private int totalNodos = 0;
 
     private String color;
 
@@ -28,21 +28,21 @@ public class Tema
     public Tema() 
     {
         this.nombre = null;
-        this.nombre_padre = null;
+        //this.nombre_padre = null;
         this.padre = null;
         this.color = null;
-        this.nivel = 0;
-        this.hijo = new ArrayList<Tema>(); 
+        //this.nivel = 0;
+        //this.hijo = new ArrayList<Tema>(); 
     }
     
     public Tema(String nombre) 
     {
         this.nombre = nombre;
-        this.nombre_padre = null;
+        //this.nombre_padre = null;
         this.padre = null;
         this.color = null;
-        this.nivel = 0;
-        this. hijo = new ArrayList<Tema>(); 
+        //this.nivel = 0;
+        //this. hijo = new ArrayList<Tema>(); 
     }
 
    
@@ -50,54 +50,54 @@ public class Tema
         return nombre;
     }
 
-    public String getNombrePadre() 
+    /*public String getNombrePadre() 
     {
         return nombre_padre;
-    }
+    }*/
 
     public String getColor()
     {
         return color;
     }
 
-    public int getNivel()
+    /*public int getNivel()
     {
         return nivel;
-    }
+    }*/
 
-    public int getNumHijo()
+    /*public int getNumHijo()
     {
         return totalNodos;
-    }
+    }*/
 
     public Tema getPadre()
     {
         return padre;
     }
 
-    public ArrayList<Tema> getHijo()
+    /*public ArrayList<Tema> getHijo()
     {
         return hijo;
-    }
+    }*/
 
-    public void setNumHijo(int num)
+    /*public void setNumHijo(int num)
     {
         this.totalNodos = num;
-    }
+    }*/
 
-    public void setNivel(int level)
+    /*public void setNivel(int level)
     {
         this.nivel = level;
-    }
+    }*/
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public void setNombrePadre(String nombre_padre) 
+    /*public void setNombrePadre(String nombre_padre) 
     {
         this.nombre_padre = nombre_padre;
-    }
+    }*/
 
 
     public void setColor(String color)
@@ -110,26 +110,26 @@ public class Tema
         this.padre = padre;
     }
 
-    public void sumaNodoHijo()
+    /*public void sumaNodoHijo()
     {
         ++totalNodos;
-    }
+    }*/
 
-    public void restaNodoHijo()
+    /*public void restaNodoHijo()
     {
         --totalNodos;
-    }
+    }*/
 
-    public void addHijo(Tema t)
+    /*public void addHijo(Tema t)
     {
         Tema help = new Tema();
         help = t;
         hijo.add(help);
         
         //System.out.println("numero total de hijos es " + totalNodos);
-    }
+    }*/
 
-    public void deleteHijo(String nombre) 
+    /*public void deleteHijo(String nombre) 
     {
         int i = 0;        
         for (Tema t : hijo) 
@@ -141,14 +141,14 @@ public class Tema
             }
             ++i;
         }
-    }
+    }*/
 
-    public boolean esHermano(Tema t)
+    /*public boolean esHermano(Tema t)
     {
         return (this.padre == t.padre);
-    }
+    }*/
     
-    public double calcularSimilitud(Tema t1)
+    /*public double calcularSimilitud(Tema t1)
     {
         int lvl1 = t1.getNivel();
         int lvl2 = this.getNivel();
@@ -187,16 +187,15 @@ public class Tema
             help = help.getPadre();
         }
         return ((double)(aux.getNivel() - 1));
-    }
+    }*/
 
-    public String toString()
+    /*public String toString()
     {
         String s = "Sub-temas: ";
         for(Tema t : hijo)
             s += t.getNombre() + " ";
         s += "\n";
         return s;
-    }
+    }*/
     
 }
-
