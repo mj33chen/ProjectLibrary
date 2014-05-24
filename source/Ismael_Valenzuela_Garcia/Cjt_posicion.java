@@ -1,5 +1,3 @@
-package biblioteca_1;
-
 import java.util.ArrayList;
 import java.lang.Math;
 
@@ -19,9 +17,11 @@ public class Cjt_posicion {
     }
     
     public Cjt_posicion(Integer n) {
-        this.posiciones = new ArrayList<Posicion>();
-        for(int i = 0; i < n; i++)
-            this.posiciones.add(new Posicion(0,0));
+        if(n > 0) {
+            this.posiciones = new ArrayList<Posicion>();
+            for(int i = 0; i < n; i++)
+                this.posiciones.add(new Posicion(0,0));
+        }
     }
     
     public Posicion getPosicion(Integer index) {
@@ -32,6 +32,10 @@ public class Cjt_posicion {
         return this.posiciones.size();
     }
             
+    public void anadirPosicion(Posicion locat) {
+        this.posiciones.add(locat);
+    }
+    
     //NO decidido
     public void anadirPosicion(Integer index, Posicion locat) {
         this.posiciones.add(index, locat);
@@ -50,14 +54,15 @@ public class Cjt_posicion {
             for(int j = i + 1; j < tam; ++j){
                     Posicion pos1 = this.getPosicion(i);
                     Posicion pos2 = this.getPosicion(j);
-                    double x2,y2,sq;
+                    double x2,y2,z2,sq;
                     x2 = Math.pow(pos1.getPosX() - pos2.getPosX(),2);
                     y2 = Math.pow(pos1.getPosY() - pos2.getPosY(),2);
-                    sq = Math.sqrt(x2 + y2);
+                    z2 = Math.pow(pos1.getPosZ() - pos2.getPosZ(),2);
+                    sq = Math.sqrt(x2 + y2 + z2);
                     matf[j][i] = sq;
                     matf[i][j] = matf[j][i];
             }
         }
         return matf;
     }
-}   
+}
