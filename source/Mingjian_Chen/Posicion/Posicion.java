@@ -12,6 +12,7 @@ public class Posicion
     
     private double posX;
     private double posY;
+    private double posZ;
     private boolean empty;
     private Libro libro;
     
@@ -32,6 +33,15 @@ public class Posicion
     {
         this.posX = posX;
         this.posY = posY;
+        this.posZ = 0;
+        this.empty = true;
+    }
+    
+    public Posicion(double posX, double posY, double posZ)
+    {
+        this.posX = posX;
+        this.posY = posY;
+        this.posZ = posZ;
         this.empty = true;
     }
 
@@ -45,6 +55,16 @@ public class Posicion
     {
         this.posX = posX;
         this.posY = posY;
+        this.posZ = 0;
+        this.libro = l; 
+        this.empty = false;
+    }
+    
+    public Posicion(double posX, double posY, double posZ, Libro l) 
+    {
+        this.posX = posX;
+        this.posY = posY;
+        this.posZ = posZ;
         this.libro = l; 
         this.empty = false;
     }
@@ -64,6 +84,11 @@ public class Posicion
     {
         return posY;
     }
+    
+     public double getPosZ() 
+    {
+        return posZ;
+    }
    
     /**
     * Dado un valor x, modifica el eje x de la posicion 
@@ -81,6 +106,11 @@ public class Posicion
     public void setPosY(double y) 
     {
         posY = y;
+    }
+    
+    public void setPosZ(double z) 
+    {
+        posZ = z;
     }
 
     /**
