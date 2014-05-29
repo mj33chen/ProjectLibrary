@@ -42,8 +42,6 @@ public class DriverControladorClasificacion
 					System.out.println("Informacion del libro: " + NEW_LINE);
 					System.out.println("nombre: " + lista[0]);
 					System.out.println("color: " + lista[1]);
-					System.out.println("nombre de tema padre: " + lista[2]);
-					System.out.println("nivel: " + lista[3]);
 					
 					break;
 
@@ -51,12 +49,10 @@ public class DriverControladorClasificacion
 					ArrayList<String[]> list = controlClasifi.getCatalogo();
 	                for (int i = 0; i < list.size(); ++i) 
 	                {
-                        System.out.println("Tema: " + (i+1));
+                        System.out.println("Tema " + (i+1) + ": ");
                         String[] v = list.get(i);
                         System.out.println("nombre: " + v[0]);
                         System.out.println("color: " + v[1]);
-                        System.out.println("nombre de tema padre: " + v[2]);
-                        System.out.println("nivel: " + v[3] + "\n");
 					}
 
 					break;
@@ -64,13 +60,14 @@ public class DriverControladorClasificacion
 				case 3:
 					System.out.println("Introducid un nombre de tema para modificar >> ");
 					nombre = (buffer.readLine());
-					tema = controlClasifi.getTema(nombre);
+					//tema = controlClasifi.getTema(nombre);
 
 					if(nombre.equals("General")) 
                     {
+                    	Tema General = new Tema();
                         System.out.println("color >> ");
                         color = buffer.readLine();
-                        tema.setColor(color);
+                        controlClasifi.modificarTema("General", "General", color);
                     }
                     else 
                     {
@@ -80,10 +77,7 @@ public class DriverControladorClasificacion
 						System.out.println("color >> ");
 	                    color = (buffer.readLine());
 
-	                    System.out.println("nombre de tema padre >> ");
-						nombre_padre = (buffer.readLine());
-
-	                    controlClasifi.modificarTema(nombre, nombre_nuevo, color, nombre_padre);
+	                    controlClasifi.modificarTema(nombre, nombre_nuevo, color);
 	                }
 
                     System.out.println("Tema modificado." + NEW_LINE);
@@ -107,10 +101,10 @@ public class DriverControladorClasificacion
 					break;
 
 				case 5:
-					System.out.println("Introducid un nombre para eliminar el libro >> ");
+					System.out.println("Introducid un nombre para eliminar el tema >> ");
 					nombre  = (buffer.readLine());
 					controlClasifi.eliminarTema(nombre);
-					System.out.println("Libro eliminado" + NEW_LINE);
+					System.out.println("Tema eliminado" + NEW_LINE);
 					break;
 
 				case 6: 
@@ -123,6 +117,19 @@ public class DriverControladorClasificacion
 					String s = controlClasifi.consultarNombreClasificacion();
 					System.out.println("nombre de la biblioteca: " + s + NEW_LINE);
 					break;
+
+				case 8:
+					System.out.println("Introducid un nombre del tema >> ");
+					nombre  = (buffer.readLine());
+					if(controlClasifi.esTemaValido(nombre)) 
+						System.out.println("Tema es valido.");
+					else 
+						System.out.println("Tema no es valido.");
+					break;
+
+				case 9:
+					System.out.println("Hay " + controlClasifi.size() + " temas en total." + NEW_LINE);
+                    break;
 
 				case 0:
 					exit = true;
@@ -152,6 +159,8 @@ public class DriverControladorClasificacion
         System.out.println("5) Eliminar un tema");       
         System.out.println("6) Modificar el nombre de clasificacion");
         System.out.println("7) Consultar el nombre de clasificacion");
+        System.out.println("8) Consultar si el tema es valido o no ?");
+        System.out.println("9) Consultar el numero de temas en total");
         System.out.println("0) exit");
         System.out.println(">> " + NEW_LINE);
 	}
