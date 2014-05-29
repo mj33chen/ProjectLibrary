@@ -23,11 +23,11 @@ public class DriverBiblioteca
         Biblioteca b = new Biblioteca(nombre, clasifi);
         System.out.println("Biblioteca creada con el nombre: " + b.getNombre() + NEW_LINE);
 		boolean exit = false;
+		String titulo, autor, nombreTema;
+
 		while(! exit)
 		{
-			menu();
-			
-			
+			menu();	
         	Libro libro = new Libro();
         	Tema tema = new Tema();
         	int id;
@@ -55,7 +55,7 @@ public class DriverBiblioteca
 					break;
 
 				case 5:
-					System.out.println("Numero total de libros: " + b.librosSize() + NEW_LINE);
+					System.out.println("Numero total de libros: " + b.biblioSize() + NEW_LINE);
 					break;
 
 				case 6:
@@ -77,12 +77,11 @@ public class DriverBiblioteca
 				case 7:
 					System.out.println("Anadir un tema a un libro"  + NEW_LINE);
 
-					System.out.println("Introducid el titulo del libro >> ");
-					String titulo = (buffer.readLine());
+					System.out.println("Introducid el id del libro >> ");
+					id = (Integer.parseInt(buffer.readLine()));
 					System.out.println("Introducid el nombre del tema >> ");
-					String titulo_ = (buffer.readLine());
-					Tema padre = new Tema("General");
-					b.anadirTemaLibro(titulo, titulo_, 1, padre);
+					nombreTema = (buffer.readLine());
+					b.anadirTemaLibro(id, nombreTema);
 
 					System.out.println("Tema anadido" + NEW_LINE);
 					break;
@@ -117,7 +116,7 @@ public class DriverBiblioteca
 					titulo = (buffer.readLine());
 
 					System.out.println("autor >> ");
-                    String autor = (buffer.readLine());
+                    autor = (buffer.readLine());
 
                     b.modificarLibro(id, titulo, autor);
                     System.out.println("Libro modificado >> " + NEW_LINE);
@@ -131,7 +130,7 @@ public class DriverBiblioteca
 				case 12:
 					System.out.println("La matriz de flujo: " + NEW_LINE);
 					double mat[][] = b.fluxMatrix();
-					int instanceSize = b.librosSize();
+					int instanceSize = b.biblioSize();
 					for (int i = 0; i < instanceSize; i++) 
 					{
             			for (int j = 0; j < instanceSize; j++) 
@@ -140,6 +139,7 @@ public class DriverBiblioteca
             			}
             			System.out.println();
             		}
+            		break;
 
 				case 0:
 					exit = true;
