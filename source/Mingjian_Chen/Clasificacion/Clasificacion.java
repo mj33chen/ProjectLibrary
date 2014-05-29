@@ -1,8 +1,14 @@
+package CapaDominio;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.lang.Math.*;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Map;
+import java.util.HashMap;
+import java.lang.Math;
+
 
 /**
  * Una clasificación consiste una jerarquia del árbol donde 
@@ -15,9 +21,13 @@ public class Clasificacion
 
 	private String nombre;
 
-	private double[][] fluxTema;
-
 	private static int numTemas = 0;
+
+	private HashMap<String, Integer> m1;
+
+	private HashMap<String, Tema> m2;
+
+	private HashMap<String, ArrayList<Tema>> m3;
 
 	private ArrayList<Tema> temas;
 
@@ -28,12 +38,13 @@ public class Clasificacion
 	* la estrutura de árbol, relativamente su numero de hijos es 0, y el nivel que está es 0 por defecto, 
 	* y aumenta el numero de temas que hay en la clasificacion 
 	*/
-	private void init_clasificacion()
+	public void init_clasificacion()
 	{
 		general = new Tema("General");
 		temas.add(general);
-		general.setNumHijo(0);
-		general.setNivel(0);
+		//general.setNumHijo(0);
+		//general.setNivel(0);
+
 		++numTemas;
 	}
 
@@ -43,12 +54,38 @@ public class Clasificacion
 	public Clasificacion(String nombre)
 	{
 		this.nombre = nombre;
-		this.fluxTema = new double[0][0];
+		m1 = new HashMap<String, Integer>();
+		m1.put("General", 0);
+		m2 = new HashMap<String, Tema>();
+		m3 = new HashMap<String, ArrayList<Tema>>();
+		ArrayList<Tema> a = new ArrayList<Tema>();
+		m3.put("General", a);
 		this.temas = new ArrayList<Tema>();
 		init_clasificacion();
 	}
 
+	/**
+	*
+	*
+	*
+	*/
+	public double similitud(String t1, String t2) throws IOException
+	{
+		if(! esTemaValido(t1)) 
+			throw new IOException("Primer tema no existe!");
+		if(! esTemaValido(t2))
+			throw new IOException("Segundo tema no existe!");
 
+		if(t1.equals(t2)) return 0.0;
+		else 
+		{
+			String padre = padreComun(t1, t2);
+			int level_padre = m1.get(padre);    // el nivel de padre comun entre dos temas 
+			int level1 = m1.get(t1);
+			int level2 = m1.get(t2);
+			return ((level1 - level_padre) + (level2 - level_padre) - 1);
+		}
+	}
 
 	/**
 	* Dado un tema, y un tema padre, el tema será el hijo del tema padre, su nivel es un nivel más inferior
@@ -56,24 +93,45 @@ public class Clasificacion
 	* @param t Tema hijo
 	* @param padre Tema padre
 	*/
-	public void anadirTema(Tema t, Tema padre)
-	{		
-		int num = padre.getNumHijo();
-		//System.out.println("num es " + num);
+	public void anadirTema(Tema t, Tema padre) throws IOException
+	{	
+		if(! esTemaValido(padre.getNombre()))
+			throw new IOException("Tema padre no existe!");
 
-		padre.addHijo(t);
-		padre.sumaNodoHijo();
-		padre.setNumHijo(padre.getNumHijo());
+		String nombre = t.getNombre();   // nombre de tema hijo 
+		if(! esTemaValido(nombre))
+		{
+			//int num = padre.getNumHijo();
+			//System.out.println("num es " + num);
 
-		//System.out.println("numero de hijos es " + t.getNumHijo());
-		//t.setNumHijo(num);
-		//System.out.println("posteriormente el numero de hijos es " + padre.getNumHijo());
+			//padre.addHijo(t);
+			//padre.sumaNodoHijo();
+			//padre.setNumHijo(padre.getNumHijo());
 
-		t.setNivel(padre.getNivel()+1);
-		t.setNumHijo(0);
-		t.setPadre(padre);
-		temas.add(t);     // vector de conjunto de temas de la Clasificación 
-		++numTemas;
+			//System.out.println("numero de hijos es " + t.getNumHijo());
+			//t.setNumHijo(num);
+			//System.out.println("posteriormente el numero de hijos es " + padre.getNumHijo());
+			String nombre_p = padre.getNombre();   // nombre de tema padre
+			int level = m1.get(nombre_p);        // obtiene el level de tema padre 
+
+			m1.put(nombre, level+1);          
+			m2.put(nombre, padre);
+
+			ArrayList<Tema> a;
+			a = new ArrayList<Tema>();
+			a = m3.get(nombre_p);    // obtiene el arraylist de subtemas de tema padre 
+			a.add(t); 
+			m3.put(nombre_p, a);
+			ArrayList<Tema> nuevo_vector = new ArrayList<Tema>();
+			m3.put(nombre, nuevo_vector);
+			//t.setNivel(padre.getNivel()+1);
+			//t.setNumHijo(0);
+			//t.setPadre(padre);
+			temas.add(t);     // vector de conjunto de temas de la Clasificación 
+			++numTemas;
+		}
+		else 
+			throw new IOException("Tema ya existe!");
 	}
 
 
@@ -83,42 +141,51 @@ public class Clasificacion
 	* @param nombreTema Nombre del tema
 	* @throws IOException Prohibe eliminar el tema "General"
 	*/
-	public void desvincularHijos(String nombreTema) throws IOException
+	public void eliminarTema(String nombreTema) throws IOException
 	{
 		if(nombreTema.equals("General"))
 		{
-			throw new IOException("Intento prohibido!");
+			throw new IOException("Tema General no inmutable");
 		}
 		else 
 		{
-			Queue<Tema> queue_temas;
-			queue_temas = new LinkedList<Tema>();
-			Tema ini = getTema(nombreTema);
-			Tema padre = ini.getPadre();     // saber el tema padre del tema 
-			queue_temas.add(ini);
-
-			while(! queue_temas.isEmpty())
+			if(esTemaValido(nombreTema))
 			{
-				Tema t = queue_temas.element();
-				//System.out.println("el primer elemento es " + t.getNombre());
-				queue_temas.remove();
+				Queue<Tema> queue_temas;
+				//ArrayList<Tema> a = new ArrayList<String>();
+				queue_temas = new LinkedList<Tema>();
 
-				if(t.getNumHijo() != 0)
+				Tema ini = getTema(nombreTema);
+				//Tema padre = ini.getPadre();     // saber el tema padre del tema 
+				queue_temas.add(ini);
+
+				while(! queue_temas.isEmpty())
 				{
-					ArrayList<Tema> hijos = t.getHijo();  // hijos de t
-					
-					for(Tema h : hijos)
-					{
-						queue_temas.add(h);
-					}
-				}
-				temas.remove(t);   // suicidar el nodo
-				--numTemas;        // actualizar el numero de temas 
-			}
+					Tema t = queue_temas.element();
+					String nombre = t.getNombre();
+					//System.out.println("el primer elemento es " + t.getNombre());
+					queue_temas.remove();
 
-			// actualizar las informaciones del tema padre 
-			padre.restaNodoHijo();
-			padre.deleteHijo(nombreTema);
+					ArrayList<Tema> a = new ArrayList<Tema>();
+					a = m3.get(nombre);
+
+					if(! a.isEmpty())
+					{
+						for(Tema h : a)
+						{
+							queue_temas.add(h);
+						}
+					}
+					// suicidar el nodo
+					temas.remove(t);   
+					m1.remove(t);
+					m2.remove(t);
+					m3.remove(t);
+					--numTemas;        // actualizar el numero de temas 
+				}
+			}
+			else 
+				throw new IOException("Tema no existe!");
 		}
 	}
 
@@ -127,23 +194,24 @@ public class Clasificacion
 	* @param nombre Nombre de tema
 	* @param nombre_nuevo El nombre nuevo que va a tener el tema 
 	* @param color Nombre de color
-	* @param nombre_padre Nombre de tema padre
 	*/
 
-	public void modificarTema(String nombre, String nombre_nuevo, String color, String nombre_padre)
+	public void modificarTema(String nombre, String nombre_nuevo, String color) throws IOException
     {
-        for (Tema t : temas) 
-        {
-            if (t.getNombre().equals(nombre)) 
-            {
-        		Tema help = getTema(nombre_padre);
-        		t.setNombre(nombre_nuevo);
-        		t.setColor(color);
-        		t.setPadre(help);
-        		t.setNombrePadre(nombre_padre);
-        		break;
-            }
-        }
+	    if(esTemaValido(nombre))
+	    {
+	        for (Tema t : temas) 
+	        {
+	            if (t.getNombre().equals(nombre)) 
+	            {
+	        		t.setNombre(nombre_nuevo);
+	        		t.setColor(color);
+	        		break;
+	            }
+	        }
+	    }
+        else
+        	throw new IOException("Tema no existe!");
     }
 
 	/**
@@ -178,13 +246,13 @@ public class Clasificacion
     * @param nombre Nombre de tema
     * @return Tema Si el nombre es valido, null en caso contrario. 
     */
-    public Tema getTema(String nombre) 
+    public Tema getTema(String nombre) throws IOException
     {
     	for(Tema t : temas)
         {
             if(t.getNombre().equals(nombre)) return t;
         }
-        return null;
+        throw new IOException("Tema no existe!");
     }
 
     /**
@@ -198,19 +266,65 @@ public class Clasificacion
     }
 
     /**
-    * Dado un nombre tema, consulta si el tema existe o no 
-    * @param nombre Nombre de tema
-    * @return True Si no existe, false en caso contrario.
+    *
+    *
+    *
     */
-    public Boolean noExistido(String nombre)
+    public boolean esTemaValido(String nombre)
     {
-        for(Tema tema : temas)
-        {  
-            if(tema.getNombre() == nombre)
-            {
-                return false;
-            }
+    	for (Tema t : temas) 
+        {
+            if (t.getNombre().equals(nombre)) 
+            	return true;
         }
-        return true;
+        return false;
     }
+
+    /**
+    *
+    *
+    *
+    */
+    public String padreComun(String t1, String t2)
+    {
+    	if(t1.equals("General") || t2.equals("General")) return "General";
+
+    	int level1 = m1.get(t1);   // el nivel de tema 1
+    	int level2 = m1.get(t2);   // el nivel de tema 2
+    	int dif = Math.abs(level1-level2);
+
+    	Tema tema1, tema2;
+    	String nombre1 = t1;
+    	String nombre2 = t2;
+
+    	while(dif != 0)
+    	{
+    		if(level1 < level2)
+    		{
+    			tema2 = m2.get(nombre2);
+    			nombre2 = tema2.getNombre();
+    		}
+    		else 
+    		{
+    			tema1 = m2.get(nombre1);
+	   			nombre1 = tema1.getNombre();
+    		}
+	    	--dif;
+    	}
+    	
+    	if(nombre1.equals(t2)) return t2;
+    	else if(nombre2.equals(t1)) return t1;
+    	else 
+    	{
+    		while(! nombre1.equals(nombre2))
+    		{
+    			tema1 = m2.get(nombre1);
+	   			nombre1 = tema1.getNombre();
+    			tema2 = m2.get(nombre2);
+    			nombre2 = tema2.getNombre();
+    		}
+    		return nombre1;
+    	} 
+    }
+
 }
