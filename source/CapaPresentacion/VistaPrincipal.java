@@ -1,40 +1,62 @@
 package CapaPresentacion;
 
 import java.awt.CardLayout;
+import java.awt.Dimension;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import java.awt.Container;
 
 
 /**
  * Created by Mingjian on 02/06/2014.
  */
-public class VistaPrincipal extends javax.swing.JFrame
+public class VistaPrincipal
 {
     private ControladorPresentacion controlPre;
+    
+    protected CardLayout layout;
+    
     //private Component frame;
 
     public VistaPrincipal(ControladorPresentacion controlPre)
     {
         initComponents();
         this.controlPre = controlPre;
-        this.setVisible(true);
         vistaClasifi.setController(controlPre);
         vistaTema.setController(controlPre);
         vistaBiblio.setController(controlPre);
         vistaCollectLibros.setController(controlPre);
         vistaLibro.setController(controlPre);
         vistaAssignTema.setController(controlPre);
-
+        
+        
+        layout.show(frameVista.getContentPane(), "vistaClasificacion");
         
         // Left view
-        CardLayout c = (CardLayout) leftView.getLayout();
+        /*CardLayout c = (CardLayout) leftView.getLayout();
         c.show(leftView, "vistaClasificacion");
-        c = (CardLayout) rightView.getLayout();
+        c = (CardLayout) rightView.getLayout();*/
 
     }
+    
+    public void hacerVisible()
+    {
+        frameVista.setVisible(true);
+        frameVista.pack();
+    }
+    
+    public void activar() {
+    frameVista.setEnabled(true);
+  }
+
+  public void desactivar() {
+    frameVista.setEnabled(false);
+  }
 
    
 
-    public void activeView(String direction, String item)
+    /*public void activeView(String direction, String item)
     {
         CardLayout card;
         if (direction.equals("left"))
@@ -66,16 +88,23 @@ public class VistaPrincipal extends javax.swing.JFrame
         vistaCollectLibros = new VistaColeccionLibros();
         vistaLibro = new VistaLibro();
         vistaAssignTema = new VistaAsignarTemas();
-        leftView = new javax.swing.JPanel();
-        rightView = new javax.swing.JPanel();
-        buttonExit = new javax.swing.JButton();
+        //leftView = new javax.swing.JPanel();
+        //rightView = new javax.swing.JPanel();
+        
+        frameVista.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        frameVista.setTitle("Proyecto PROP");
+        frameVista.setMinimumSize(new java.awt.Dimension(200, 200));
+        frameVista.setResizable(true);
+        
+        Container pane = frameVista.getContentPane();
+        layout = new CardLayout();
+        pane.setLayout(layout);
+        pane.add(vistaClasifi, "vistaClasificacion");
+        
+        //JPanel contentPane = (JPanel) frameVista.getContentPane();
+        //contentPane.add(vistaClasifi);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Proyecto PROP");
-        setMinimumSize(new java.awt.Dimension(947, 492));
-        setResizable(false);
-
-        leftView.setBackground(new java.awt.Color(196, 255, 243));
+        /*leftView.setBackground(new java.awt.Color(196, 255, 243));
         leftView.setLayout(new java.awt.CardLayout());
         leftView.add(vistaClasifi, "vistaClasificacion");
         leftView.add(vistaBiblio, "crearBiblioteca");
@@ -86,49 +115,15 @@ public class VistaPrincipal extends javax.swing.JFrame
         rightView.setMinimumSize(new java.awt.Dimension(220, 424));
         rightView.setPreferredSize(new java.awt.Dimension(187, 424));
         rightView.setLayout(new java.awt.CardLayout());
-        rightView.add(vistaLibro, "crearLibro");
+        rightView.add(vistaLibro, "crearLibro");*/
 
-        buttonExit.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        buttonExit.setBackground(new java.awt.Color(62, 255, 233));
-        buttonExit.setText("Exit");
-        buttonExit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(buttonExit)
-                                .addContainerGap(516, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addContainerGap(265, Short.MAX_VALUE)
-                                .addComponent(buttonExit)
-                                .addContainerGap())
-        );
-
-        pack();
-        // </editor-fold>//GEN-END:initComponents
-    }
-
-    private void exitActionPerformed(java.awt.event.ActionEvent evt)
-    {
-        JOptionPane.showMessageDialog(this, "Adios, Good bye!", "", JOptionPane.INFORMATION_MESSAGE);
-        System.exit(0); // para salir del programa...
     }
 
     
     // Variables declaration - do not modify
-    private javax.swing.JButton buttonExit;
-    private javax.swing.JPanel leftView;
-    private javax.swing.JPanel rightView;
+    private JFrame frameVista = new JFrame("Vista Principal");
+    //private javax.swing.JPanel leftView;
+    //private javax.swing.JPanel rightView;
     private VistaLibro vistaLibro;
     private VistaCrearBiblioteca vistaBiblio;
     private VistaTema vistaTema;
