@@ -81,10 +81,8 @@ public class VistaClasificacion extends javax.swing.JPanel
 
         jLabel2.setText("Nombre:");
 
-        editNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editNombreActionPerformed(evt);
-            }
+        editNombre.addActionListener((java.awt.event.ActionEvent evt) -> {
+            editNombreActionPerformed(evt);
         });
         
         buttonSave.addActionListener((java.awt.event.ActionEvent evt) -> {
@@ -131,10 +129,6 @@ public class VistaClasificacion extends javax.swing.JPanel
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2)
@@ -145,14 +139,19 @@ public class VistaClasificacion extends javax.swing.JPanel
                         .addComponent(buttonModify)
                         .addGap(18, 18, 18)
                         .addComponent(buttonDelete)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buttonCreate, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(32, 32, 32))
+                        .addGap(27, 27, 27)
+                        .addComponent(buttonSave))
+                    .addComponent(editNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(86, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(editNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(32, 32, 32)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,9 +162,9 @@ public class VistaClasificacion extends javax.swing.JPanel
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(editNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -174,10 +173,10 @@ public class VistaClasificacion extends javax.swing.JPanel
                             .addComponent(buttonDelete))
                         .addGap(40, 40, 40))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(buttonCreate)
-                        .addGap(20, 20, 20))))
+                        .addComponent(buttonSave)
+                        .addGap(23, 23, 23))))
         );
-    }// </editor-fold>
+    }// </editor-fold>          
 
     private void editNombreActionPerformed(java.awt.event.ActionEvent evt)
     {
@@ -192,7 +191,7 @@ public class VistaClasificacion extends javax.swing.JPanel
         }
         else
         {
-            controlPre.activeView("left", "crearBiblioteca");
+            //controlPre.activeView("left", "crearBiblioteca");
             rebootLabelandList();
         }
     }
@@ -202,7 +201,7 @@ public class VistaClasificacion extends javax.swing.JPanel
         if(! controlPre.esEmptyClasifi())
         {
             vistaTema.setMode(true);
-            controlPre.activeView("left", "crearTema");
+            //controlPre.activeView("left", "crearTema");
         }
         else
             buttonCreate.setEnabled(false);
@@ -220,7 +219,7 @@ public class VistaClasificacion extends javax.swing.JPanel
             }
             vistaTema.loadTema(nombreTema);
             vistaTema.setMode(false);
-            controlPre.activeView("left", "crearTema");
+            //controlPre.activeView("left", "crearTema");
         }
         else
             buttonModify.setEnabled(false);
