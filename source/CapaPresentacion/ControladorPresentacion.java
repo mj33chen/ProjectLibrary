@@ -12,7 +12,7 @@ public class ControladorPresentacion
 {
 
     private ControladorSistema controlSystem;
-    private VistaPrincipal vistaPrin = null;
+    private VistaPrincipal vistaPrin;
 
     public ControladorPresentacion()
     {
@@ -22,7 +22,7 @@ public class ControladorPresentacion
 
     public void initPresentation()
     {
-        vistaPrin.setVisible(true);
+        vistaPrin.hacerVisible();
     }
 
     public void rebootController()
@@ -30,10 +30,10 @@ public class ControladorPresentacion
         controlSystem.rebootController();
     }
 
-    public void activeView(String dir, String item)
+    /*public void activeView(String dir, String item)
     {
         vistaPrin.activeView(dir, item);
-    }
+    }*/
 
     public void anadirLibro(String titulo, String autor, int id) throws IOException
     {
@@ -110,4 +110,5 @@ public class ControladorPresentacion
         return controlSystem.temaRepetido(idL, nombreT);
     }
 
+  
 }
