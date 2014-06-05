@@ -1,7 +1,6 @@
 package CapaPresentacion;
 
 import java.awt.CardLayout;
-import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -24,7 +23,9 @@ public class VistaPrincipal
         initComponents();
         this.controlPre = controlPre;
         vistaClasifi.setController(controlPre);
+        vistaClasifi.setVista(vistaTema);
         vistaTema.setController(controlPre);
+        vistaTema.setVista(vistaClasifi);
         vistaBiblio.setController(controlPre);
         vistaCollectLibros.setController(controlPre);
         vistaLibro.setController(controlPre);
@@ -56,20 +57,10 @@ public class VistaPrincipal
 
    
 
-    /*public void activeView(String direction, String item)
+    public void activeView(String panel)
     {
-        CardLayout card;
-        if (direction.equals("left"))
-        {
-            card = (CardLayout) leftView.getLayout();
-            card.show(leftView, item);
-        }
-        else
-        {
-            card = (CardLayout) rightView.getLayout();
-            card.show(rightView, item);
-            activeView("left", "collectLibros");
-        }
+        if(panel.equal("crearTema"))
+        layout.show(frameVista.getContentPane(), panel);
     }
 
     /**
@@ -97,9 +88,13 @@ public class VistaPrincipal
         frameVista.setResizable(true);
         
         Container pane = frameVista.getContentPane();
+        Container paneFinal = frameVista.getContentPane();
         layout = new CardLayout();
+        
         pane.setLayout(layout);
+        paneFinal.setLayout(layout);
         pane.add(vistaClasifi, "vistaClasificacion");
+        paneFinal.add(vistaTema, "crearTema");
         
         //JPanel contentPane = (JPanel) frameVista.getContentPane();
         //contentPane.add(vistaClasifi);
