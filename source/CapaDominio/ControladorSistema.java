@@ -15,17 +15,17 @@ public class ControladorSistema
     private ControladorBiblioteca controlBiblio;
     private ControladorClasificacion controlClasi;
 
-    public ControladorSistema()
+    public ControladorSistema() throws IOException
     {
         controlBiblio = new ControladorBiblioteca();
         controlClasi = new ControladorClasificacion();
         this.loadSystem();
     }
 
-    public void rebootController()
-    {
-        controlBiblio = new ControladorBiblioteca();
+    public void rebootController() throws IOException
+    {        
         controlClasi = new ControladorClasificacion();
+        controlBiblio = new ControladorBiblioteca();
     }
 
     public void anadirLibro(String titulo, String autor, int id) throws IOException
@@ -69,6 +69,11 @@ public class ControladorSistema
         return controlClasi.getPadre(nombre);
     }
 
+    public void anadirTema(String nombre, String nombrePadre) throws IOException
+    {
+        controlClasi.anadirTema(nombre, null, nombrePadre);
+    }
+            
     public void eliminarTema(String nombre) throws IOException
     {
         controlClasi.eliminarTema(nombre);
@@ -76,7 +81,7 @@ public class ControladorSistema
 
     public boolean esTemaValido(String nombre) throws IOException
     {
-        return controlClasi.esTemaValido(nombre);
+        return (controlClasi.esTemaValido(nombre));
     }
 
     public void modificarTema(String nombre, String nombre_nuevo) throws IOException
