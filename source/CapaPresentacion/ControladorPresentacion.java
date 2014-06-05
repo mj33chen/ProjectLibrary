@@ -14,7 +14,7 @@ public class ControladorPresentacion
     private ControladorSistema controlSystem;
     private VistaPrincipal vistaPrin;
 
-    public ControladorPresentacion()
+    public ControladorPresentacion() throws IOException
     {
        vistaPrin = new VistaPrincipal(this);
        controlSystem = new ControladorSistema();
@@ -25,15 +25,15 @@ public class ControladorPresentacion
         vistaPrin.hacerVisible();
     }
 
-    public void rebootController()
+    public void rebootController() throws IOException
     {
         controlSystem.rebootController();
     }
 
-    /*public void activeView(String dir, String item)
+    public void activeView(String panel)
     {
-        vistaPrin.activeView(dir, item);
-    }*/
+        vistaPrin.activeView(panel);
+    }
 
     public void anadirLibro(String titulo, String autor, int id) throws IOException
     {
@@ -75,6 +75,11 @@ public class ControladorPresentacion
         return controlSystem.getPadre(nombre);
     }
 
+    public void anadirTema(String nombre, String nombrePadre) throws IOException
+    {
+        controlSystem.anadirTema(nombre, nombrePadre);
+    }
+    
     public void eliminarTema(String nombre) throws IOException
     {
         controlSystem.eliminarTema(nombre);
